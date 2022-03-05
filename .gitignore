@@ -1,4 +1,3 @@
 #Files to be ignored. Replace white space with a *. For directories add a "/" to the end.
 
-SDM*-*Lab01*-*DBLP*Data*alias/
 .idea/
