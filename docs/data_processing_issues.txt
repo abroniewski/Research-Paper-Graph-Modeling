@@ -1,0 +1,12 @@
+file: output_school -> line 1449 has a quote (") and has an array with 2 universities.
+Adam may have made an edit to his original source data here -> DOUBLE CHECK
+
+Assumptions:
+rules and restrictions will be implemented during instantiation and will not need to be enforced at query time
+
+Rules:
+1 - Paper cannot site itself (assumed to be controlled by DBLP database already?)
+2 - author cannot review their own paper (again, already controlled?)
+
+Rules to implement in queries:
+1 - for IF, do citations w/i the same journal count?
