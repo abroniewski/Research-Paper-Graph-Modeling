@@ -116,6 +116,6 @@ if __name__ == "__main__":
     # App that loads a file named small into Neo4j and creates node house
     App.enable_log(logging.INFO, sys.stdout)
     app = App(bolt_url, user, password)
-    df = pd.read_csv('data/processed/test/small.csv', delimiter=';')
+    df = pd.read_csv('../data/processed/test/small.csv', delimiter=';')
     for _, row in df.iterrows():
         ans = app.create_house(house_id=row.id, list_name=row.list_name)
