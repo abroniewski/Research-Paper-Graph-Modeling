@@ -1,6 +1,4 @@
 #Files to be ignored. Replace white space with a *. For directories add a "/" to the end.
 
-data/processed/dblp-to-csv
-data/raw
 .idea/
 .nosync
