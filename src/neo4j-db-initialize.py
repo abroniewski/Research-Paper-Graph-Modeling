@@ -4,6 +4,7 @@ import sys
 from neo4j.exceptions import ServiceUnavailable
 import pandas as pd
 import csv
+from os.path import join
 # This python script is used to intialize the database and create all nodes and edges
 
 # link between python and Neo4j (Ismail)
@@ -35,7 +36,10 @@ CREATE(:Author {id: toInteger(line.id), name: line.author})
 
 
 ### Articles and Journals (Ismail)
-
+##################################################
+# Global Variables
+##################################################
+NUMBER_OF_LINES = 20
 ##################################################
 # Helper
 ##################################################
@@ -68,26 +72,52 @@ class Neo4jConnection:
                 session.close()
         return response
 
+def clean_header_str(header_file_path):
+    with open(header_file_path, 'r') as abfile:
+        header = csv.reader(abfile, delimiter=';')
+        header_list = next(header)
+        # print( header_list )
+        heading_clean = [heading.split(':')[0] for heading in header_list]
+        heading_str = ';'.join(heading_clean)
+        print(f'hdr_str: {heading_str}')
+        # so that next lines in the file starts from next line and not from the end of header_str
+        return heading_str + '\n'
+
+
+def prepare_entity_n_truncate(project_dir, entity_file, entity_header, entity_out_name_name, num_lines=NUMBER_OF_LINES):
+    """
+    This reads header line from header file & clean it. Creates a new file with header and places specified lines from
+     entity file below it.
+    :param str project_dir:
+    :param str entity_file:
+    :param str entity_header:
+    :param str entity_out_name_name:
+    :param int num_lines:
+    :return:
+    """
+    heading_str = clean_header_str(entity_header)
+    with open(entity_out_name_name, 'w') as file_handle_out:
+        file_handle_out.write(heading_str)
+        with open(entity_file, 'r') as contents:
+            for i, line in enumerate(contents):
+                file_handle_out.write(line)
+                if i == NUMBER_OF_LINES:
+                    break
+
+    return True
+
 
 # Python script for pre-processing checks
+project_dir = "/home/teemo/.config/Neo4j Desktop/Application/relate-data/projects/project-ec569d0a-1cfc-4569-8aa8-cf7729f3de61/output/"
+article_og = join(project_dir, "output_article.csv")
+article_header = join(project_dir, "output_article_header.csv")
+article_out = join(project_dir, "article_20.csv")
 
-main_file = "/home/teemo/.config/Neo4j Desktop/Application/relate-data/projects/project-ec569d0a-1cfc-4569-8aa8-cf7729f3de61/output/output_article.csv"
 
-with open("/home/teemo/.config/Neo4j Desktop/Application/relate-data/projects/project-ec569d0a-1cfc-4569-8aa8-cf7729f3de61/output/output_article_header.csv", 'r') as abfile:
-    header = csv.reader(abfile, delimiter=';')
-    header_list = next(header)
-    # print( header_list )
-    heading_clean = [ heading.split(':')[0] for heading in header_list ]
-    heading_str = ';'.join(heading_clean)
-    print(heading_str)
+a = prepare_entity_n_truncate(project_dir, entity_file=article_og, entity_header=article_header,
+                              entity_out_name_name=article_out)
 
-def line_prepender(filename, line):
-    with open(filename, 'r+') as f:
-        content = f.read()
-        f.seek(0, 0)
-        f.write(line.rstrip('\r\n') + '\n' + content)
-
-line_prepender(main_file, heading_str)
+print( a )
 
 conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
 query_string='''
