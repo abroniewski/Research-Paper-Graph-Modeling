@@ -10,18 +10,23 @@ from os.path import join
 # link between python and Neo4j (Ismail)
 
 
-
-# directory definition
-
-processed_data_directory = "data/processed/dblp-to-csv"
-ismail_directory = ""
-adam_directory ="http://localhost:11001/project-b7855507-1cee-4692-8ff3-f3e64ffe6e1a"
 #file location naming convention -> f"{name_directory}/output_school.csv"
 output_author.csv
 
 # Authors and Citations (Adam)
 
 # Creating nodes for authors
+conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
+query_string='''
+    LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-b7855507-1cee-4692-8ff3-f3e64ffe6e1a/scopusBYUEngr17_21.csv' 
+        AS row FIELDTERMINATOR ','
+    CREATE (:Author {name: row.authors})
+    return * LIMIT 30 ;
+    '''
+
+conn.query(query_string, db='neo4j')
+
+
 LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-b7855507-1cee-4692-8ff3-f3e64ffe6e1a/output_author_small.csv' AS line FIELDTERMINATOR ';'
 CREATE(:Author {id: toInteger(line.id), name: line.author})
 
