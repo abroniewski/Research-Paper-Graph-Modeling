@@ -7,10 +7,10 @@ https://universitelibrebruxelles-my.sharepoint.com/personal/adam_broniewski_ulb_
 
 ## Notes on loading data to neo4j
 
-Loads CSV, splits columns based on `FIELDTERMINATOR` `;` and splits array based on `|` separator
+Loads CSV, splits columns based on `FIELDTERMINATOR` `,` and splits array based on `|` separator
 ```cypher
 LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/small.csv'
-  AS row FIELDTERMINATOR ';'
+  AS row FIELDTERMINATOR ','
 with toInteger( row.id ) AS ID,
 split(row.list_name, '|') AS names
 RETURN ID, names
@@ -68,3 +68,6 @@ Columns are in order so the ones to appear first, are first in file as well.
 --relationships:authored_by "output_author_authored_by.csv"
 --relationships:submitted_at "output_school_submitted_at.csv" 
 --relationships:is_part_of "output_series_is_part_of.csv"
+
+## Data Pre-processing
+Some pre-processing steps took place without scripting and were completed manually via regex commands. Documentation of the steps can be found [here](docs/PRE-PROCESS-STEPS.md).
