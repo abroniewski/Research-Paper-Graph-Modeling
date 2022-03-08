@@ -1,0 +1,2001 @@
+,:ID;author:string
+0,8960974;Paul Kocher
+1,8960975;Daniel Genkin
+2,8960976;Daniel Gruss
+3,8960977;Werner Haas 0004
+4,8960978;Mike Hamburg
+5,8960979;Moritz Lipp
+6,8960980;Stefan Mangard
+7,8960981;Thomas Prescher 0002
+8,8960982;Michael Schwarz 0001
+9,8960983;Yuval Yarom
+10,8960984;Frank Manola
+11,8960985;Michael L. Brodie
+12,8960986;Michael Stonebraker
+13,8960987;Mark F. Hornick
+14,8960988;Joe D. Morrison
+15,8960989;Farshad Nayeri
+16,8960990;Alejandro P. Buchmann
+17,8960991;M. Tamer Özsu
+18,8960992;Dimitrios Georgakopoulos
+19,8960993;Sandra Heiler
+20,8960994;Benjamin Hurwitz
+21,8960995;David Beech
+22,8960996;Cetin Ozbutun
+23,8960997;Krishna G. Kulkarni
+24,8960998;Jim Melton
+25,8960999;Jonathan Bauer
+26,8961000;Mike Kelley
+27,8961001;Phil Shaw
+28,8961002;Rolf Sander
+29,8961003;Thomas Ludwig 0001
+30,8961004;Werner Emde
+31,8961005;Claus-Rainer Rollinger
+32,8961006;Christoph Beierle
+33,8961007;Udo Pletat
+34,8961008;Hans Uszkoreit
+35,8961009;Ulrike Rackow
+36,8961010;Ido Dagan
+37,8961011;Ulrike Schwall
+38,8961012;Brigitte Bartsch-Spörl
+39,8961013;Erich Gehlen
+40,8961014;Burkhard Kehrbusch
+41,8961015;Markus Höhfeld
+42,8961016;Gert Smolka
+43,8961017;Birgit Wesche
+44,8961018;Christopher Habel
+45,8961019;Bernd Walter
+46,8961020;Michael Ley
+47,8961021;Albert Maier
+48,8961022;Stefan Benzschawel
+49,8961023;Egon Börger
+50,8961024;Roland Seiffert
+51,8961025;Gisela Schöpke
+52,8961026;Stefan Böttcher
+53,8961027;Rudi Studer
+54,8961028;Toni Bollinger
+55,8961029;Carola Eschenbach
+56,8961030;Manfred Schmidt-Schauß
+57,8961031;Hans-Joachim Goltz
+58,8961032;Otthein Herzog
+59,8961033;Bernhard Beckert
+60,8961034;Stefan J. Schierholz
+61,8961035;Birgit Wendholt
+62,8961036;Gudrun Klose
+63,8961037;Michael Herweg
+64,8961038;Mohammed Nadjib Khenkhar
+65,8961039;Simone Pribbenow
+66,8961040;Klaus Rehkämper
+67,8961041;Anja Theuner
+68,8961042;Peter H. Schmitt
+69,8961043;Claudia Maienborn
+70,8961044;Brigitte Bläser
+71,8961045;Angelika Storrer
+72,8961046;Esther König
+73,8961047;Claudia Mrotzek
+74,8961048;Stefan Börner
+75,8961049;Lutz Voelkel
+76,8961050;Kai-Uwe Carstensen
+77,8961051;Ulrike Weiland
+78,8961052;Martin Hübner
+79,8961053;Michael Czymmeck
+80,8961054;Michael Tarnowski
+81,8961055;Helmar Gust
+82,8961056;Petra Ludewig
+83,8961057;Mechthild Rickheit
+84,8961058;Kai von Luck
+85,8961059;Elisabeth Neugebauer
+86,8961060;Sitaram Lanka
+87,8961061;Eric Mays
+88,8961062;Petra Maier
+89,8961063;Michel E. Adiba
+90,8961064;Bruce G. Lindsay 0001
+91,8961065;Ewald Lang
+92,8961066;Thomas Pirlein
+93,8961067;Gerd Kortüm
+94,8961068;Ipke Wachsmuth
+95,8961069;Ingrid Renz
+96,8961070;Noam Paz
+97,8961071;Kurt Eberle
+98,8961072;Gregor Erbach
+99,8961073;Christos Garidis
+100,8961074;Jennifer A. Brundage
+101,8961075;Maren Kresse
+102,8961076;Eric Windisch
+103,8961077;Peter Gerstl
+104,8961078;Dines Bjørner
+105,8961079;E. F. Codd
+106,8961080;Kenneth L. Deckert
+107,8961081;Irving L. Traiger
+108,8961082;Sonja Müller
+109,8961083;Rolf Mayer
+110,8961084;Rüdiger Wirth
+111,8961085;Holger M. Wittmann
+112,8961086;Jan Wilms
+113,8961087;Kai Lebeth
+114,8961088;Bernd Abb
+115,8961089;Jörg Heinrich
+116,8961090;Andreas Eisele 0001
+117,8961091;Jochen Dörre
+118,8961092;Rainer Bäuerle
+119,8961093;Sven Lorenz
+120,8961094;Michael Klein
+121,8961095;Robert S. Arnold
+122,8961096;Jean-Marc Cadiou
+123,8961097;Chin-Liang Chang
+124,8961098;Nick Roussopoulos
+125,8961099;Tibor Kiss
+126,8961100;Wolfgang Wernecke
+127,8961101;Ulrich Hedtstück
+128,8961102;Petra Steffens
+129,8961103;Manfred Grothaus
+130,8961104;Karin Klabunde
+131,8961105;Karl Dotzek
+132,8961106;Sai Choi Kwan
+133,8961107;H. Raymond Strong
+134,8961108;Nikolaus Ott
+135,8961109;F. Günthner
+136,8961110;Siegfried Kanngießer
+137,8961111;Christian Rohrer
+138,8961112;Elisabeth Breidt
+139,8961113;Oliver Wauschkuhn
+140,8961114;Angi Voß
+141,8961115;Ingo Raasch
+142,8961116;Bernd I. Dahn
+143,8961117;Theodor Lettmann
+144,8961118;Wolfgang Schönfeld
+145,8961119;Jim Gray 0001
+146,8961120;Cesare A. Galtieri
+147,8961121;Christoph Lingenfelder
+148,8961122;Astrid Schmücker-Schend
+149,8961123;Joachim Maier
+150,8961124;Hinrich Schütze
+151,8961125;Jörg H. Siekmann
+152,8961126;Herbert J. Leass
+153,8961127;Walter G. Olthoff
+154,8961128;Reiner Hähnle
+155,8961129;Stefan Gerberding
+156,8961130;Werner Kernig
+157,8961131;Gregor Meyer
+158,8961132;Andreas Arning
+159,8961133;Raymond A. Lorie
+160,8961134;Bernhard Nebel
+161,8961135;Petra Schulz
+162,8961136;Sebastian Millies
+163,8961137;Heiner Semle
+164,8961138;Anne Schiller
+165,8961139;M. Wermke
+166,8961140;Karl-Hans Bläsius
+167,8961141;Elke Busch
+168,8961142;Jürgen Pietsch
+169,8961143;R. Zieschank
+170,8961144;D. Marx
+171,8961145;P. Klug-Lier
+172,8961146;Bernd Page
+173,8961147;D. Eberle
+174,8961148;Volker Jantzen
+175,8961149;Ralph Scheubrein
+176,8961150;William C. Rounds
+177,8961151;Kurt Rothermel
+178,8961152;Bart Geurts
+179,8961153;Josef Gemander
+180,8961154;Wilfried Hötker
+181,8961155;Karel Oliva
+182,8961156;Uwe Reyle
+183,8961157;Jutta Kreiß
+184,8961158;Jürgen Manowsky
+185,8961159;Karl Schlechta
+186,8961160;Geoffrey Simmons
+187,8961161;Arne Pott
+188,8961162;Rob A. van der Sandt
+189,8961163;Vera Watson
+190,8961164;Adrian Müller
+191,8961165;Robert Dionne
+192,8961166;Robert A. Weida
+193,8961167;Peter Bosch
+194,8961168;George Markowsky
+195,8961169;Stefan Bayerl
+196,8961170;Günther Görz
+197,8961171;Kjell Johan Sæbø
+198,8961172;Jean-Yves Lerner
+199,8961173;Ulrich Schatz
+200,8961174;Gosse Bouma
+201,8961175;Raymond F. Boyce
+202,8961176;Donald D. Chamberlin
+203,8961177;Bradford W. Wade
+204,8961178;Karin Neuhold
+205,8961179;Richard Rödler
+206,8961180;Gerd Hoff
+207,8961181;Martin Mundhenk
+208,8961182;Manfred Laumen
+209,8961183;Christoph Meinel
+210,8961184;Harald Sack
+211,8961185;Volker Schillings
+212,8961186;Carsten Damm
+213,8961187;Martin Gugat
+214,8961188;Nguyen V. Thoai
+215,8961189;Friedemann Leibfritz
+216,8961190;El-Sayed M. E. Mostafa
+217,8961191;Belinda B. King
+218,8961192;E. Arian
+219,8961193;A. Battermann
+220,8961194;Ekkehard W. Sachs
+221,8961195;Peter Gritzmann
+222,8961196;Victor Klee
+223,8961197;John Westwater
+224,8961198;Dieter Baum
+225,8961199;Florian Jarre
+226,8961200;Anna Slobodová
+227,8961201;Rainer Tichatschke
+228,8961202;Alexander Kaplan
+229,8961203;Tim Voetmann
+230,8961204;M. Böhm
+231,8961205;Artur Czumaj
+232,8961206;Przemyslawa Kanarek
+233,8961207;Miroslaw Kutylowski
+234,8961208;Krzysztof Lorys
+235,8961209;Klaus Jansen
+236,8961210;Klaus Lux
+237,8961211;Markus Wiegelmann
+238,8961212;Helmut Seidl
+239,8961213;Christian Fecht
+240,8961214;Jordan Gergov
+241,8961215;Harald Luschgy
+242,8961216;Matthias Heinkenschloss
+243,8961217;Bernd Sturmfels
+244,8961218;Christian Stangier
+245,8961219;Arno Wagner
+246,8961220;Mirjam Dür
+247,8961221;Reiner Horst
+248,8961222;Beniamino Di Martino
+249,8961223;Christoph W. Keßler
+250,8961224;Wei Zhou 0006
+251,8961225;Anna Bernasconi 0001
+252,8961226;Igor E. Shparlinski
+253,8961227;Le Dung Muu
+254,8961228;Kasyap Natarajan
+255,8961229;Hubertus Th. Jongen
+256,8961230;Oliver Stein
+257,8961231;M. Nast
+258,8961232;Lothar Breuer
+259,8961233;Hannes Frey
+260,8961234;Johannes K. Lehnert
+261,8961235;Daniel Görgen
+262,8961236;Peter Sturm 0001
+263,8961237;Patrick Reuther
+264,8961238;E. Levitin
+265,8961239;Jürgen Huschens
+266,8961240;Marco Fahl
+267,8961241;Andreas Neumann 0001
+268,8961242;Randal E. Bryant
+269,8961243;Subhendu Bikash Hazra
+270,8961244;Volker Schulz 0001
+271,8961245;Elena Dubrova
+272,8961246;Horst Schmitt
+273,8961247;Peter Willems
+274,8961248;Igor N. Kovalenko
+275,8961249;R. J. Gardner
+276,8961250;Dieter Prangenberg
+277,8961251;János Sztrik
+278,8961252;Oliver Möller
+279,8961253;Ulrich Hertrampf
+280,8961254;Thomas Burger
+281,8961255;Jochen Bern
+282,8961256;Heidi Jäger
+283,8961257;Thomas Erlebach
+284,8961258;Flemming Nielson
+285,8961259;Gurami Tsitsiashvili
+286,8961260;Patrick Justen
+287,8961261;Klaus Schwettmann
+288,8961262;Ulrich Raber
+289,8961263;Fabio Somenzi
+290,8961264;Thorsten Theobald
+291,8961265;Abdelouahed Hamdi
+292,8961266;Attahiru Sule Alfa
+293,8961267;Siegfried Graf
+294,8961268;Jens Hofmann 0001
+295,8961269;Norbert Th. Müller
+296,8961270;Jan-J. Rückmann
+297,8961271;Volker Klotz
+298,8961272;Dimitri Efrosinin
+299,8961273;Vladimir Rykov
+300,8961274;Hans L. Bodlaender
+301,8961275;Gerhard J. Woeginger
+302,8961276;Michael Ruvimovich Davidson
+303,8961277;Stephan Waack
+304,8961278;Holger Class
+305,8961279;Rainer Helmig
+306,8961280;Katja Lenz
+307,8961281;Alexander Hufnagel
+308,8961282;David G. Larman
+309,8961283;D. Kleis
+310,8961284;Petra Scheffler
+311,8961285;Stasys Jukna
+312,8961286;Mikail Gevantmakher
+313,8961287;Tankred Rautert
+314,8961288;Luciano Lenzini
+315,8961289;S. Rotin
+316,8961290;Dirk Frosch
+317,8961291;Craig Smith
+318,8961292;Vladimir V. Kalashnikov
+319,8961293;N. Lehdili
+320,8961294;C. Ould Ahmed Salem
+321,8961295;Matthias Krause 0001
+322,8961296;Andreas Brieden
+323,8961297;Marco Gilbert
+324,8961298;Lars Abbe
+325,8961299;Sebastian Maneth
+326,8961300;Thomas Perst
+327,8961301;Helmut Finner
+328,8961302;Markus Roters
+329,8961303;Jirí Sgall
+330,8961304;M. A. Osipova
+331,8961305;N. V. Koliev
+332,8961306;Oleg V. Khamisov
+333,8961307;Markus Holzer 0001
+334,8961308;Varmo Vene
+335,8961309;Markus Müller-Olm
+336,8961310;Feng Cheng 0002
+337,8961311;Paul Ferring
+338,8961312;Martin Luckow
+339,8961313;Dirk Frosch-Wilke
+340,8961314;Judy Goldsmith
+341,8961315;Christopher Lusena
+342,8961316;Eric Allender
+343,8961317;Rainer Hettich
+344,8961318;Matthias Transier
+345,8961319;Wolfgang Effelsberg
+346,8961320;Aditya V. Nori
+347,8961321;Anthony J. Hayter
+348,8961322;Joachim Reiter
+349,8961323;Rustam Mubarakzjanov
+350,8961324;Ulrich Holtmann
+351,8961325;C. T. Kelley
+352,8961326;Peter Rossmanith
+353,8961327;Michael Schmitt 0002
+354,8961328;Gianpiero Cabodi
+355,8961329;Stefano Quer
+356,8961330;Ditmar Erdmann
+357,8961331;Volker Schmidt
+358,8961332;Peter Dierolf
+359,8961333;Paul B. Hermanns
+360,8961334;Markus R. Schmidt
+361,8961335;Clemens Lautemann
+362,8961336;Thomas Schwentick
+363,8961337;Heribert Vollmer
+364,8961338;Klaus W. Wagner
+365,8961339;B. S. Tam
+366,8961340;Jacques Wainer
+367,8961341;Michael Eckmann
+368,8961342;Siome Goldenstein
+369,8961343;Anderson Rocha 0001
+370,8961344;Arnon Rosenthal
+371,8961345;Roy T. Fielding
+372,8961346;Henrik Frystyk Nielsen
+373,8961347;Tim Berners-Lee
+374,8961348;Alin Deutsch
+375,8961349;Mary F. Fernandez
+376,8961350;Daniela Florescu
+377,8961351;Alon Y. Levy
+378,8961352;Dan Suciu
+379,8961353;Robin Cover
+380,8961354;C. J. Date 0001
+381,8961355;Rita Ley
+382,8961356;Markus Casper
+383,8961357;Hugo Hellebrand
+384,8961358;Ralf Merz
+385,8961359;John Lions
+386,8961360;Patrick A. V. Hall
+387,8961361;Markus Tresch
+388,8961362;Gayane Grigoryan
+389,8961363;Oliver Gronz
+390,8961364;Oliver Gutjahr
+391,8961365;Günther Heinemann
+392,8961366;Andreas Rock
+393,8961367;Stephan Vollmer
+394,8961368;Vanessa C. Klaas
+395,8961369;Kurt P. Brown
+396,8961370;Tolga Yurek
+397,8961371;Oliver Hoffmann 0002
+398,8961372;Bir Bhanu
+399,8961373;Marijke De Soete
+400,8961374;Chen-Mou Cheng
+401,8961375;Shucheng Yu
+402,8961376;Wenjing Lou
+403,8961377;Kui Ren 0001
+404,8961378;Carlisle Adams
+405,8961379;Alex Biryukov
+406,8961380;Gerrit Bleumer
+407,8961381;Carl M. Ellison
+408,8961382;David Naccache
+409,8961383;Dan Boneh
+410,8961384;Burt Kaliski
+411,8961385;Burton S. Kaliski Jr.
+412,8961386;Friedrich L. Bauer
+413,8961387;Peter Landrock
+414,8961388;Lars R. Knudsen
+415,8961389;Stan Z. Li
+416,8961390;Sean W. Smith
+417,8961391;Brian Wongchaowart
+418,8961392;Adam J. Lee
+419,8961393;Yvo Desmedt
+420,8961394;Berry Schoenmakers
+421,8961395;Anne Canteaut
+422,8961396;Nicolas Sendrier
+423,8961397;Adi Shamir
+424,8961398;Eran Tromer
+425,8961399;Christophe De Cannière
+426,8961400;Catherine A. Meadows
+427,8961401;Pierangela Samarati
+428,8961402;Angelika Plate
+429,8961403;Clemens Heinrich
+430,8961404;Stefan Köpsell
+431,8961405;Kazue Sako
+432,8961406;Bodo Möller
+433,8961407;Ninghui Li
+434,8961408;Tanja Lange 0001
+435,8961409;Arun Ross
+436,8961410;Jim Alves-Foss
+437,8961411;Ran Canetti
+438,8961412;Cristina Nita-Rotaru
+439,8961413;Reza Curtmola
+440,8961414;Bart Preneel
+441,8961415;Alessandro Campi
+442,8961416;Kim Nguyen
+443,8961417;William Whyte
+444,8961418;Caroline Fontaine
+445,8961419;Gerald Brose
+446,8961420;Matthias Schunter
+447,8961421;Eric Cronin
+448,8961422;Markus Kuhn
+449,8961423;Mary Ellen Zurko
+450,8961424;Richard T. Simon
+451,8961425;Sabrina De Capitani di Vimercati
+452,8961426;Helena Handschuh
+453,8961427;Berk Sunar
+454,8961428;Scott A. Crosby
+455,8961429;Dan S. Wallach
+456,8961430;Christian Cachin
+457,8961431;Mary J. Culnan
+458,8961432;Vijay Alturi
+459,8961433;Antoon Bosselaers
+460,8961434;Claude Carlet
+461,8961435;Scott Contini
+462,8961436;Salvatore J. Stolfo
+463,8961437;Brian M. Bowen
+464,8961438;Malek Ben Salem
+465,8961439;Jonas Richiardi
+466,8961440;Krzysztof Kryszczuk
+467,8961441;Marc Joye
+468,8961442;Francis Olivier
+469,8961443;J. Black
+470,8961444;Mitchell A. Thornton
+471,8961445;Torben P. Pedersen
+472,8961446;Nary Subramanian
+473,8961447;Marco Bucci
+474,8961448;Anton Stiglic
+475,8961449;Phong Q. Nguyen
+476,8961450;Christophe Petit
+477,8961451;Jean-Jacques Quisquater
+478,8961452;Robert J. Zuccherato
+479,8961453;Salil P. Vadhan
+480,8961454;Marc Vauclair
+481,8961455;Darrel Hankerson
+482,8961456;Alfred Menezes
+483,8961457;Tom Caddy
+484,8961458;Radu Sion
+485,8961459;Yevgeniy Dodis
+486,8961460;XiaoFeng Wang 0001
+487,8961461;Ernst M. Gabidulin
+488,8961462;Emmanuel Thomé
+489,8961463;Torben Pedersen
+490,8961464;Trent Jaeger
+491,8961465;François Morain
+492,8961466;G. R. Blakley
+493,8961467;Gregory A. Kabatiansky
+494,8961468;Matthew K. Franklin
+495,8961469;Tor Helleseth
+496,8961470;Ruggero Donida Labati
+497,8961471;Fabio Scotti
+498,8961472;Robert Silverman
+499,8961473;Dalit Naor
+500,8961474;Tae Hwan Oh
+501,8961475;Shinyoung Lim
+502,8961476;Young B. Choi
+503,8961477;Jungwoo Ryoo
+504,8961478;Tim Güneysu
+505,8961479;Svetlana N. Yanushkevich
+506,8961480;Denis V. Popel
+507,8961481;Saeed Abu-Nimeh
+508,8961482;Assia Tria
+509,8961483;Hamid Choukri
+510,8961484;David Samyde
+511,8961485;Brent ByungHoon Kang
+512,8961486;Greg Sinclair
+513,8961487;Anurag Srivastava
+514,8961488;Paulo S. L. M. Barreto
+515,8961489;Vincent Rijmen
+516,8961490;Moses D. Liskov
+517,8961491;Nicholas C. Weaver
+518,8961492;Wensheng Zhang
+519,8961493;Henk C. A. van Tilborg
+520,8961494;Kar-Ann Toh
+521,8961495;Andrew Beng Jin Teoh
+522,8961496;Robert Blakley 0001
+523,8961497;Jean-Louis Lanet
+524,8961498;V. N. Venkatakrishnan
+525,8961499;Claudio Bettini
+526,8961500;Ehab Al-Shaer
+527,8961501;Anil K. Jain 0001
+528,8961502;Angelos Stavrou
+529,8961503;Graham Steel
+530,8961504;Ebru Celikel Cankaya
+531,8961505;Nicky Mouha
+532,8961506;Jorge Guajardo
+533,8961507;Lorrie Faith Cranor
+534,8961508;Miles E. Smid
+535,8961509;Marco Gruteser
+536,8961510;Roberto Avanzi
+537,8961511;Nicolas Thériault
+538,8961512;Steve Lloyd
+539,8961513;Xiaokui Xiao
+540,8961514;Patrick D. McDaniel
+541,8961515;Collin Jackson
+542,8961516;Kun Sun 0001
+543,8961517;Peng Ning
+544,8961518;Claudio Agostino Ardagna
+545,8961519;Kaoru Kurosawa
+546,8961520;Martin Gagné
+547,8961521;Fabien A. P. Petitcolas
+548,8961522;Qiushi Yang
+549,8961523;Dario V. Forte
+550,8961524;Dwight Horne
+551,8961525;Mike Just
+552,8961526;Ben J. M. Smeets
+553,8961527;Jerome A. Solinas
+554,8961528;Paul England
+555,8961529;François Koeune
+556,8961530;Donggang Liu
+557,8961531;Hakan Hacigümüs
+558,8961532;Bijit Hore
+559,8961533;Sharad Mehrotra
+560,8961534;Claude Crépeau
+561,8961535;Yi Yang 0002
+562,8961536;Sencun Zhu
+563,8961537;David F. Ferraiolo
+564,8961538;Michalis Polychronakis
+565,8961539;Pascale Charpin
+566,8961540;Niels Provos
+567,8961541;Josep Domingo-Ferrer
+568,8961542;Soma Biswas
+569,8961543;Rama Chellappa
+570,8961544;Srdjan Capkun
+571,8961545;Joe Pato
+572,8961546;Laurent Sustek
+573,8961547;B. V. K. Vijaya Kumar
+574,8961548;Sara Foresti
+575,8961549;Guido Salvaneschi
+576,8961550;Paolo Salvaneschi
+577,8961551;Alexander Kruppa
+578,8961552;Paul Leyland
+579,8961553;Michael Ward
+580,8961554;Olivier Benoît
+581,8961555;Jeffrey J. Wiley
+582,8961556;Gerardo Pelosi
+583,8961557;Christiane Peters
+584,8961558;Glenn Durfee
+585,8961559;Mohamed Omar Rayes
+586,8961560;Christof Paar
+587,8961561;Guofei Gu
+588,8961562;Michael E. Locasto
+589,8961563;Ann Cavoukian
+590,8961564;Alex Stoianov
+591,8961565;Mike Burmester
+592,8961566;François-Xavier Standaert
+593,8961567;Jing Dong 0006
+594,8961568;Mehdi Tibouchi
+595,8961569;André Weimerskirch
+596,8961570;William Enck
+597,8961571;Scott E. Coull
+598,8961572;Achint Thomas
+599,8961573;Venu Govindaraju
+600,8961574;Mihai Christodorescu
+601,8961575;Vinod Ganapathy
+602,8961576;Russ Housley
+603,8961577;Sean Turner
+604,8961578;Michael J. Wiener
+605,8961579;Daniel J. Bernstein
+606,8961580;Gilles Brassard
+607,8961581;Pavan Verma
+608,8961582;Matthew J. B. Robshaw
+609,8961583;Thomas Morris
+610,8961584;Patrizio Campisi
+611,8961585;Emanuele Maiorana
+612,8961586;Alessandro Neri 0001
+613,8961587;Debbie Cook
+614,8961588;Edlyn Teske
+615,8961589;David Pointcheval
+616,8961590;Jörg Schwenk
+617,8961591;William D. Casper
+618,8961592;Stephen M. Papa
+619,8961593;Arkadiusz Orlowski
+620,8961594;Sangwon Hyun
+621,8961595;Martin Johns
+622,8961596;Wenyuan Xu
+623,8961597;Alexander Barg
+624,8961598;Daniel Gordon
+625,8961599;Arjen K. Lenstra
+626,8961600;Jonathan K. Millen
+627,8961601;Sebastiaan Indesteege
+628,8961602;Günther Pernul
+629,8961603;Moritz Riesner
+630,8961604;Paul Zimmermann
+631,8961605;Ernesto Damiani
+632,8961606;Andrew Clark
+633,8961607;Keith B. Frikken
+634,8961608;Michael T. Hunter
+635,8961609;Çetin Kaya Koç
+636,8961610;David Zhang 0001
+637,8961611;Feng Yue
+638,8961612;Wangmeng Zuo
+639,8961613;Frédérique Biennier
+640,8961614;Scott A. Rotondo
+641,8961615;Kristen LeFevre
+642,8961616;Bee-Chung Chen
+643,8961617;Sharon Boeyen
+644,8961618;Daniele Micciancio
+645,8961619;Elisa Gorla
+646,8961620;Serge Fenet
+647,8961621;Giovanni Livraga
+648,8961622;Lee D. McFearin
+649,8961623;Daniel M. Gordon
+650,8961624;Qijun Gu
+651,8961625;Louis Goubin
+652,8961626;Jacques Patarin
+653,8961627;Bo-Yin Yang
+654,8961628;Stefano Paraboschi
+655,8961629;Angelos D. Keromytis
+656,8961630;Ronald L. Rivest
+657,8961631;Nadia Heninger
+658,8961632;Cynthia Dwork
+659,8961633;Italo Dacosta
+660,8961634;Colin D. Walter
+661,8961635;William Stallings
+662,8961636;Elisabeth de Leeuw
+663,8961637;Matthieu Finiasz
+664,"8961638;""Jung-Min """"Jerry"""" Park"""
+665,8961639;Kaigui Bian
+666,8961640;Hideki Imai
+667,8961641;Atsuhiro Yamagishi
+668,8961642;Frédéric Cuppens
+669,8961643;Nora Cuppens-Boulahia
+670,8961644;Benoît Libert
+671,8961645;Guohong Cao
+672,8961646;Zhichao Zhu
+673,8961647;Jeffrey Hoffstein
+674,8961648;Stuart Haber
+675,8961649;Henri Massias
+676,8961650;Pascal Paillier
+677,8961651;David Challener
+678,8961652;Kerstin Lemke
+679,8961653;Ming Li 0003
+680,8961654;Evangelia Micheli-Tzanakou
+681,8961655;Konstantinos N. Plataniotis
+682,8961656;Vivek Kanhangad
+683,8961657;Gregor Leander
+684,8961658;Eli Biham
+685,8961659;Edward Sciore
+686,8961660;Alessandro Orso
+687,8961661;Benny Pinkas
+688,8961662;Goce Jakimoski
+689,8961663;Ali Bagherzandi
+690,8961664;Anita Ochieano
+691,8961665;Bryan D. Payne
+692,8961666;Thomas Eisenbarth 0001
+693,8961667;Timo Kasper
+694,8961668;Panos Papadimitratos
+695,8961669;Jean-Pierre Hubaux
+696,8961670;Russell Housley
+697,8961671;Brecht Wyseur
+698,8961672;Alexander W. Dent
+699,8961673;Scott D. Stoller
+700,8961674;Aaron Estes
+701,8961675;Alan D. Smith
+702,8961676;David A. McGrew
+703,8961677;Martin Evison
+704,8961678;John Ioannidis
+705,8961679;Engin Kirda
+706,8961680;Stelvio Cimato
+707,8961681;Roberto Sassi
+708,8961682;Paul C. Leyland
+709,8961683;Joan Daemen
+710,8961684;Laurent Bussard
+711,8961685;David Brumley
+712,8961686;Luc Bouganim
+713,8961687;Yanli Guo
+714,8961688;Joachim Biskup
+715,8961689;Mayank Varia
+716,8961690;William E. Winkler
+717,8961691;Gildas Avoine
+718,8961692;Mark Stephens
+719,8961693;David Elliott Bell
+720,8961694;Fernando L. Podio
+721,8961695;Johannes Gehrke
+722,8961696;Ashwin Machanavajjhala
+723,8961697;Sachiko Yoshihama
+724,8961698;Xiaowei Yang 0001
+725,8961699;Aggelos Kiayias
+726,8961700;Bülent Yener
+727,8961701;Marion Videau
+728,8961702;Suman Banerjee
+729,8961703;Vladimir Brik
+730,8961704;John Black
+731,8961705;Philippe Gaborit
+732,8961706;Jelena Mirkovic
+733,8961707;Bruce Schneier
+734,8961708;Mudhakar Srivatsa
+735,8961709;Arun Iyengar
+736,8961710;Hakki C. Cankaya
+737,8961711;Steven M. Bellovin
+738,8961712;Piero A. Bonatti
+739,8961713;Homayoon S. M. Beigi
+740,8961714;George C. Necula
+741,8961715;Charu C. Aggarwal
+742,8961716;Nabil R. Adam
+743,8961717;Haibing Lu
+744,8961718;Jaideep Vaidya
+745,8961719;Basit Shafiq
+746,8961720;Davide Martinenghi
+747,8961721;Randy Sabett
+748,8961722;Pierrick Gaudry
+749,8961723;Radmilo Racic
+750,8961724;George Kesidis
+751,8961725;Hugo Krawczyk
+752,8961726;Antoine Joux
+753,8961727;Reynald Lercier
+754,8961728;Shambhu J. Upadhyaya
+755,8961729;Toni Farley
+756,8961730;Jill Joseph
+757,8961731;Stefan Katzenbeisser 0001
+758,8961732;Johannes Kinder
+759,8961733;Helmut Veith
+760,8961734;Amit Klein 0001
+761,8961735;Wesley M. Eddy
+762,8961736;Padmaraj M. V. Nair
+763,8961737;Lukasz Opyrchal
+764,8961738;Micah Sherr
+765,8961739;Tyrone Grandison
+766,8961740;Carlo Blundo
+767,8961741;Sudeep Sarkar
+768,8961742;Zongyi Liu
+769,8961743;Sachar Paulus
+770,8961744;Danny De Cock
+771,8961745;Michael Huth
+772,8961746;Alban Gabillon
+773,8961747;Yu Chen
+774,8961748;Jon Callas
+775,8961749;Daniel Nagy
+776,8961750;Akira Otsuka
+777,8961751;Heiko Mantel
+778,8961752;Harold Mouchère
+779,8961753;Christian Viard-Gaudin
+780,8961754;Gautam Singaraju
+781,8961755;Pijush Samui
+782,8961756;Yildirim Dalkiliç
+783,8961757;J. Jagan
+784,8961758;William B. Langdon
+785,8961759;António Leitão
+786,8961760;Penousal Machado
+787,8961761;Renu Vyas
+788,8961762;Purva Goel
+789,8961763;Sanjeev S. Tambe
+790,8961764;Ali Vahdat
+791,8961765;Jillian Morgan
+792,8961766;Andrew R. McIntyre
+793,8961767;Malcolm I. Heywood
+794,8961768;A. Nur Zincir-Heywood
+795,8961769;Stanislaw Deniziak
+796,8961770;Leszek Ciopinski
+797,8961771;Grzegorz Pawinski
+798,8961772;Rajib Maity
+799,8961773;Kironmala Chanda
+800,8961774;Mohamed A. Shahin
+801,8961775;Partha Pratim Roy 0002
+802,8961776;Supratim Ray
+803,8961777;Kunal Roy
+804,8961778;João Correia
+805,8961779;Filipe Assunção
+806,8961780;José María Luna
+807,8961781;Alberto Cano 0001
+808,8961782;Sebastián Ventura
+809,8961783;Elahe Fallah-Mehdipour
+810,8961784;Omid Bozorg Haddad
+811,8961785;Saeed K. Babanajad
+812,8961786;A. Zahiri
+813,8961787;A. A. Dehghani
+814,8961788;H. Md. Azamathulla
+815,8961789;Mehdi Mousavi
+816,8961790;Alireza Azarbakht
+817,8961791;Sahar Rahpeyma
+818,8961792;Ali Farhadi
+819,8961793;Mohammed S. Hussain
+820,8961794;Alireza Ahangar-Asr
+821,8961795;Youliang Chen
+822,8961796;Akbar A. Javadi
+823,8961797;Conor Ryan
+824,8961798;Jeannie Fitzgerald
+825,8961799;Krzysztof Krawiec
+826,8961800;David Medernach
+827,8961801;Michael F. Korns
+828,8961802;Hamed Koohpayehzadeh Esfahani
+829,8961803;Bithin Datta
+830,8961804;Dominic P. Searson
+831,8961805;José Carlos Bregieiro Ribeiro
+832,8961806;Ana Filipa Nogueira
+833,8961807;Francisco Fernández de Vega
+834,8961808;Mário Alberto Zenha-Rela
+835,8961809;Seyyed Soheil Sadat Hosseini
+836,8961810;Alireza Nemati
+837,8961811;Pradyut Kumar Muduli
+838,8961812;Sarat Kumar Das
+839,8961813;Andrew Sixsmith
+840,8961814;Charalampos Doukas
+841,8961815;Thomas Pliakas
+842,8961816;Ilias Maglogiannis
+843,8961817;Michael Huch
+844,8961818;José Javier Yanguas
+845,8961819;Elena Urdaneta
+846,8961820;Michael John
+847,8961821;Stefan Klose
+848,8961822;Beate Seewald
+849,8961823;Tom Chau
+850,8961824;Negar Memarian
+851,8961825;Brian Leung
+852,8961826;Deborah Treherne
+853,8961827;David A. Hobbs
+854,8961828;Breanna Worthington-Eyre
+855,8961829;Andrea Lamont
+856,8961830;Michele Pla-Mobarak
+857,8961831;Ellen Yi-Luen Do
+858,8961832;Brian D. Jones
+859,8961833;Jean Roberts
+860,8961834;Amritpal Singh Bhachu
+861,8961835;Nicolas Hine
+862,8961836;Ryan Woolrych
+863,8961837;Reiner Wichert
+864,8961838;Mohammad-Reza Tazari
+865,8961839;Francesco Furfari
+866,8961840;Álvaro Fides-Valero
+867,8961841;Sten Hanke
+868,8961842;Oliver Höftberger
+869,8961843;Dionisis D. Kehagias
+870,8961844;Miran Mosmondor
+871,8961845;Peter Wolf
+872,8961846;Elizabeth Mestheneos
+873,8961847;Juan Carlos Augusto
+874,8961848;Michael Obach
+875,8961849;Pierre Barralon
+876,8961850;Enrique León
+877,8961851;Leire Martínez
+878,8961852;Javier Arcas
+879,8961853;Igone Idígoras
+880,8961854;Alberto Martínez
+881,8961855;Arantxa Rentería
+882,8961856;Carmen Pastor
+883,8961857;Tony Gentry
+884,8961858;Julie Maitland
+885,8961859;George MacGinnis
+886,8961860;Shimon K. Modi
+887,8961861;Alex Mihailidis
+888,8961862;Jennifer Boger
+889,8961863;Stephen Czarnuch
+890,8961864;Tizneem Jiancaro
+891,8961865;Jesse Hoey
+892,8961866;Ken Sakamura
+893,8961867;Shao-Huai Lee
+894,8961868;Jui-Chen Huang
+895,8961869;Ana Garcia Robles
+896,8961870;Javier García Guzmán
+897,8961871;Lorena Bourg
+898,8961872;J. Manuel Ojel
+899,8961873;R. Ignacio Madrid
+900,8961874;Foteini Agrafioti
+901,8961875;Francis Minhthang Bui
+902,8961876;Dimitrios Hatzinakos
+903,8961877;David Prendergast 0001
+904,8961878;Claire Somerville
+905,8961879;Joseph P. Wherton
+906,8961880;Michael C. Balasch
+907,8961881;Martin Schultz
+908,8961882;Christine Carius-Düssel
+909,8961883;Joachim Hänsel
+910,8961884;Norbert Pieth
+911,8961885;Thilo Ernst
+912,8961886;Jörn Kiselev
+913,8961887;Gerd Kock
+914,8961888;Ben Hennig
+915,8961889;Klaus F. Wagner
+916,8961890;Marten Haesner
+917,8961891;Elisabeth Steinhagen-Thiessen
+918,8961892;Mehmet Gövercin
+919,8961893;Jan-Peter Jansen
+920,8961894;Markus Schröder
+921,8961895;Matthias Masur
+922,8961896;Tobias Leipold
+923,8961897;Irina Busch
+924,8961898;Stefan Zeidler
+925,8961899;Sibylle Meyer
+926,8961900;Uta Böhm
+927,8961901;Christa Fricke
+928,8961902;Claudia Spindler
+929,8961903;Harald Klaus
+930,8961904;Fabienne Waidelich
+931,8961905;Jens-Uwe Bußer
+932,8961906;Wolfgang Klasen
+933,8961907;Katrin Müller
+934,8961908;Anastasios Drosou
+935,8961909;Dimitrios Tzovaras
+936,8961910;Raluca Marin-Perianu
+937,8961911;Juan Jimenez Garcia
+938,8961912;Stephan Bosch
+939,8961913;Mihai Marin-Perianu
+940,8961914;Paul J. M. Havinga
+941,8961915;Suzanne Martin
+942,8961916;Maurice D. Mulvenna
+943,8961917;Diana Hodgins
+944,8961918;Tom O'Kane
+945,8961919;John O'Donoghue
+946,8961920;Joe Gallagher
+947,8961921;Abdur Aftab
+948,8961922;Aveline Casey
+949,8961923;Garry Courtney
+950,8961924;Annalisa Franco
+951,8961925;Dario Maio
+952,8961926;Davide Maltoni
+953,8961927;Wolfgang Deiters
+954,8961928;Oliver Koch
+955,8961929;Thomas Königsmann
+956,8961930;Sven Meister
+957,8961931;Diane J. Cook
+958,8961932;Lawrence B. Holder
+959,8961933;Lenka Lhotská
+960,8961934;Jaromir Dolezal
+961,8961935;Václav Chudácek
+962,8961936;Michal Huptych
+963,8961937;Miroslav Bursa
+964,8961938;Jan Havlík
+965,8961939;Francesca I. Cavallaro
+966,8961940;Fabrice O. Morin
+967,8961941;Ainara Garzo
+968,8961942;Anthony Remazeilles
+969,8961943;Gabriel Gaminde
+970,8961944;Eric Wade
+971,8961945;Avinash Rao Parnandi
+972,8961946;Paul J. McCullagh
+973,8961947;Babak A. Farshchian
+974,8961948;Kristine Holbø
+975,8961949;Marius Mikalsen
+976,8961950;Jarl Reitan
+977,8961951;Martin Floeck
+978,8961952;Lothar Litz
+979,8961953;Annette Spellerberg
+980,8961954;Mario Drobics
+981,8961955;Angelika Dohr
+982,8961956;Susanne Giesecke
+983,8961957;Günter Schreier
+984,8961958;Katherine Wild
+985,8961959;Linda Boise
+986,8961960;Ingo Meyer
+987,8961961;Lutz Kubitschke
+988,8961962;Tatsuo Nakajima
+989,8961963;Fahim Kawsar
+990,8961964;Teresa Zayas-Cabán
+991,8961965;Jenna L. Marquard
+992,8961966;CheeFai Tan
+993,8961967;Wei Chen 0015
+994,8961968;Matthias Rauterberg
+995,8961969;Frerk Müller
+996,8961970;Myriam Lipprandt
+997,8961971;Marco Eichelberg
+998,8961972;Axel Helmer
+999,8961973;Clemens Busch
+1000,8961974;Detlev Willemsen
+1001,8961975;Andreas Hein
+1002,8961976;Dana Pavel
+1003,8961977;Vic Callaghan
+1004,8961978;Anind K. Dey
+1005,8961979;Tsai-Ya Lai
+1006,8961980;Jenn-Hwan Tarng
+1007,8961981;William D. Kearns
+1008,8961982;James L. Fozard
+1009,8961983;Rami Puzis
+1010,8961984;Meytal Tubi
+1011,8961985;Yuval Elovici
+1012,8961986;Yu-Ru Lin
+1013,8961987;Hari Sundaram
+1014,8961988;Aisling Kelliher
+1015,8961989;Anwitaman Datta
+1016,8961990;Sonja Buchegger
+1017,8961991;Le-Hung Vu
+1018,8961992;Thorsten Strufe
+1019,8961993;Krzysztof Rzadca
+1020,8961994;Eduardo B. Fernández
+1021,8961995;Carolina Marin
+1022,8961996;Maria M. Larrondo-Petrie
+1023,8961997;Jose Simoes
+1024,8961998;Thomas Magedanz
+1025,8961999;Masaki Aida
+1026,8962000;Hideyuki Koto
+1027,8962001;Lisa Singh
+1028,8962002;Elisa Jayne Bienenstock
+1029,8962003;Janet Mann
+1030,8962004;Muthucumaru Maheswaran
+1031,8962005;Bader Ali
+1032,8962006;Hatice Ozguven
+1033,8962007;Julien Lord
+1034,8962008;Janice Kwan-Wai Leung
+1035,8962009;Chun Hung Li
+1036,8962010;Munmun De Choudhury
+1037,8962011;Ajita John
+1038,8962012;Dorée Duncan Seligmann
+1039,8962013;Mingxin Zhang
+1040,8962014;Jason J. Jung
+1041,8962015;Kwang Sun Choi
+1042,8962016;Sung-Hyuk Park
+1043,8962017;P. Santhi Thilagam
+1044,8962018;Ronald R. Yager
+1045,8962019;Ing-Xiang Chen
+1046,8962020;Cheng-Zen Yang
+1047,8962021;Cecilia Sik-Lányi
+1048,8962022;Leucio Antonio Cutillo
+1049,8962023;Mark Manulis
+1050,8962024;Sergej Sizov
+1051,8962025;Steffen Staab
+1052,8962026;Thomas Franz
+1053,8962027;Touhid Bhuiyan
+1054,8962028;Audun Jøsang
+1055,8962029;Yue Xu
+1056,8962030;Susanta Mitra
+1057,8962031;Aditya Bagchi
+1058,8962032;Nathalie Henry Riche
+1059,8962033;Jean-Daniel Fekete
+1060,8962034;Katerina Slaninová
+1061,8962035;Jan Martinovic
+1062,8962036;Pavla Drázdilová
+1063,8962037;Gamila Obadi
+1064,8962038;Václav Snásel
+1065,8962039;Abraham Bagherjeiran
+1066,8962040;Rushi Bhatt
+1067,8962041;Rajesh Parekh
+1068,8962042;Vineet Chaoji
+1069,8962043;Nina D. Ziv
+1070,8962044;Kerry-Ann White
+1071,8962045;Lester Melendez
+1072,8962046;Ouri Wolfson
+1073,8962047;Malek Adjouadi
+1074,8962048;Naphtali Rishe
+1075,8962049;Tsuyoshi Murata
+1076,8962050;Bo Yang 0002
+1077,8962051;Dayou Liu
+1078,8962052;Jiming Liu 0001
+1079,8962053;Marcel Karnstedt
+1080,8962054;Tara Hennessy
+1081,8962055;Jeffrey Chan
+1082,8962056;Partha Basuchowdhuri
+1083,8962057;Conor Hayes
+1084,8962058;Keiji Yanai
+1085,8962059;Bingyu Qiu
+1086,8962060;Dil Muhammad Akbar Hussain
+1087,8962061;Antonio Hernando
+1088,8962062;Jesús Bobadilla
+1089,8962063;Francisco Serradilla
+1090,8962064;Gerhard Austaller
+1091,8962065;Fernando Lyardet
+1092,8962066;Dirk Schnelle
+1093,8962067;Rainer Malaka
+1094,8962068;Erwin Aitenbichler
+1095,8962069;Sebastian Ries
+1096,8962070;Tobias Straub
+1097,8962071;Andreas Heinemann
+1098,8962072;Andreas Hartl
+1099,8962073;Michael Weber 0001
+1100,8962074;Marc Hermann
+1101,8962075;Samir Raiyani
+1102,8962076;Matthias Winkler
+1103,8962077;Melanie Hartmann
+1104,8962078;Jochen H. Schiller
+1105,8962079;Daniel Oberle
+1106,8962080;Christof Bornhövd
+1107,8962081;Michael Altenhofen
+1108,8962082;Wolfgang Gerteis
+1109,8962083;Zoltán Nochta
+1110,8962084;Jürgen Anke
+1111,8962085;Bernhard Wolf
+1112,8962086;Gregor Hackenbroich
+1113,8962087;Hong Hai Do
+1114,8962088;Mario Neugebauer
+1115,8962089;Anja Klein 0001
+1116,8962090;Frankie James
+1117,8962091;Rama Gurram
+1118,8962092;Patrik Spieß
+1119,8962093;Jens Müller 0002
+1120,8962094;Matthias Jöst
+1121,8962095;Jussi Kangasharju
+1122,8962096;Volkmar Lotz
+1123,8962097;Luca Compagna
+1124,8962098;Konrad S. Wrona
+1125,8962099;Tobias Limberger
+1126,8962100;Burkhard Stiller
+1127,8962101;David Hausheer
+1128,8962102;Jan Gerke
+1129,8962103;Péter Rácz
+1130,8962104;Cristian Morariu
+1131,8962105;Martin Waldburger
+1132,8962106;Max Mühlhäuser
+1133,8962107;Iryna Gurevych
+1134,8962108;Louenas Hamdi
+1135,8962109;Alistair Barros
+1136,8962110;Saburo Muroga
+1137,8962111;Akio Nakagawa
+1138,8962112;Alice C. Parker
+1139,8962113;Yosef Tirat-Gefen
+1140,8962114;Suhrid A. Wadekar
+1141,8962115;Samuel S. Martin
+1142,8962116;Thad Gabara
+1143,8962117;Kwok Ng
+1144,8962118;Vikram Iyengar
+1145,8962119;Elizabeth M. Rudnick
+1146,8962120;John D. Cressler
+1147,8962121;John W. Fattaruso
+1148,8962122;Louis A. Williams III
+1149,8962123;Bang-Sup Song
+1150,8962124;Geert A. De Veirman
+1151,8962125;Michiel Steyaert
+1152,8962126;Marc Borremans
+1153,8962127;Johan Janssens
+1154,8962128;Bram De Muer
+1155,8962129;Andrea Baschirotto
+1156,8962130;Philip G. Neudeck
+1157,8962131;Dimitri Kagaris
+1158,8962132;Peter J. Hesketh
+1159,8962133;Shin-ichi Minato
+1160,8962134;Thomas H. Lee
+1161,8962135;Maria del Mar Hershenson
+1162,8962136;Sunderarajan S. Mohan
+1163,8962137;Kirad Samavati
+1164,8962138;C. Patrick Yue
+1165,8962139;Spyros Tragoudas
+1166,8962140;Krishna Shenai
+1167,8962141;Erik A. McShane
+1168,8962142;Naofumi Takagi
+1169,8962143;Haruyuki Tago
+1170,8962144;Charles R. Baugh
+1171,8962145;Zainalabedin Navabi
+1172,8962146;Yasuhiro Katsumata
+1173,8962147;Tatsuya Ohguro
+1174,8962148;Kazumi Inoh
+1175,8962149;Eiji Morifuji
+1176,8962150;Takashi Yoshitomi
+1177,8962151;Hideki Kimijima
+1178,8962152;Hideaki Nii
+1179,8962153;Toyota Morimoto
+1180,8962154;Hisayo S. Momose
+1181,8962155;Kuniyoshi Yoshikawa
+1182,8962156;Hidemi Ishiuchi
+1183,8962157;Hiroshi Iwai
+1184,8962158;John Lockwood
+1185,8962159;Victor Boyadzhyan
+1186,8962160;John Choma Jr.
+1187,8962161;Ivan S. Kourtev
+1188,8962162;Eby G. Friedman
+1189,8962163;James H. Aylor
+1190,8962164;Robert H. Klenke
+1191,8962165;Steve M. Kang
+1192,8962166;Abhijit Dharchoudhury
+1193,8962167;David T. Blaauw
+1194,8962168;Stantanu Ganguly
+1195,8962169;Michel S. Nakhla
+1196,8962170;Ramachandra Achar
+1197,8962171;Flavio Lorenzelli
+1198,8962172;Kung Yao
+1199,8962173;Stephen I. Long
+1200,8962174;J. Gregory Rollins
+1201,8962175;Ko Yoshikawa
+1202,8962176;Chung-Yu Wu
+1203,8962177;Jen-Sheng Hwang
+1204,8962178;Wayne H. Wolf
+1205,8962179;David L. Barton
+1206,8962180;Donald B. Estreich
+1207,8962181;Daniel A. Connors
+1208,8962182;Wen-mei W. Hwu
+1209,8962183;David J. Comer
+1210,8962184;Donald T. Comer
+1211,8962185;Rick Shih-Jye Shen
+1212,8962186;Frank Ruei-Ling Lin
+1213,8962187;Amy Hsiu-Fen Chou
+1214,8962188;Evans Ching-Song Yang
+1215,8962189;Charles Ching-Hsiang Hsu
+1216,8962190;Nick Kanopoulos
+1217,8962191;Martin Margala
+1218,8962192;J. Bhasker
+1219,8962193;Massoud Pedram
+1220,8962194;Sorin Cristoloveanu
+1221,8962195;Allen M. Dewey
+1222,8962196;Moon-Jung Chung
+1223,8962197;Heechul Kim
+1224,8962198;Pankaj Khandelwal
+1225,8962199;Yuichi Nakamura
+1226,8962200;Kuo-Hsing Cheng
+1227,8962201;Donald Cottrell
+1228,8962202;Ashraf Lotfi
+1229,8962203;Yuh-Kuang Tseng
+1230,8962204;R. F. Wassenaar
+1231,8962205;Mohammed Ismail 0001
+1232,8962206;Chi-Hung Lin
+1233,8962207;Min-shueh Yuan
+1234,8962208;Chorng-Kuang Wang
+1235,8962209;Tanay Karnik
+1236,8962210;Jan V. Grahn
+1237,8962211;Mikael Östling
+1238,8962212;Chris Toumazou
+1239,8962213;Alison J. Payne
+1240,8962214;Harry W. Li
+1241,8962215;R. Jakob Baker
+1242,8962216;Donald C. Thelen
+1243,8962217;John M. Khoury
+1244,8962218;Charles E. Chang
+1245,8962219;Meera Venkataraman
+1246,8962220;Sumit Gupta
+1247,8962221;Rajesh K. Gupta 0001
+1248,8962222;Isik C. Kizilyalli
+1249,8962223;Karl Hess
+1250,8962224;Joseph W. Lyding
+1251,8962225;Kazuo Yano
+1252,8962226;Edgar Gómez Cruz
+1253,8962227;J. Patrick Williams
+1254,8962228;Hsin-Liang Chen
+1255,8962229;Boyd Davis
+1256,8962230;Peyton Mason
+1257,8962231;Mauri Collins
+1258,8962232;Zane Berge
+1259,8962233;Artemio Ramirez Jr.
+1260,8962234;Matthew S. Eastin
+1261,8962235;Jennifer Chakroff
+1262,8962236;Vincent Cicchirillo
+1263,8962237;Gabriel A. Giordano
+1264,8962238;Jason S. Stoner
+1265,8962239;Robyn L. Brouer
+1266,8962240;Joey F. George
+1267,8962241;Patricia G. Lange
+1268,8962242;Lesley S. J. Farmer
+1269,8962243;Jutta Weber
+1270,8962244;Joachim Kimmerle
+1271,8962245;Ulrike Cress
+1272,8962246;Michael Stefanone
+1273,8962247;John W. Mullennix
+1274,8962248;Steven E. Stern
+1275,8962249;Stacey L. Connaughton
+1276,8962250;Janice Krueger
+1277,8962251;Sarah Rofofsky Marcus
+1278,8962252;Jo Mackiewicz
+1279,8962253;Markus Wolf
+1280,8962254;Stephanie Bauer
+1281,8962255;Danny Hughes 0001
+1282,8962256;James Walkerdine
+1283,8962257;H. L. Lim
+1284,8962258;Fay Sudweeks
+1285,8962259;Kalev Leetaru
+1286,8962260;R. K. Koslowsky
+1287,8962261;Apryl Price
+1288,8962262;Rosanna Tarsiero
+1289,8962263;Rosanna E. Guadagno
+1290,8962264;Katrin Allmendinger
+1291,8962265;David Robins
+1292,8962266;Gerald S. Greenberg
+1293,8962267;Zeynep Cemalcilar
+1294,8962268;Sandra M. Harrison
+1295,8962269;Kent Marett
+1296,8962270;Michaël Opgenhaffen
+1297,8962271;Barrie Jo Price
+1298,8962272;Rotimi Taiwo
+1299,8962273;Rosalie J. Ocker
+1300,8962274;Jung-ran Park
+1301,8962275;Anna C. McFadden
+1302,8962276;Jamie Switzer
+1303,8962277;Susan R. Fussell
+1304,8962278;Qiping Zhang
+1305,8962279;Leslie D. Setlock
+1306,8962280;Angélica Rísquez
+1307,8962281;Eric T. Meyer
+1308,8962282;Suely Fragoso
+1309,8962283;Erin Bower
+1310,8962284;Karen Brodsky
+1311,8962285;Allison Level
+1312,8962286;Amy E. Hoseth
+1313,8962287;Uma Devi Doraiswamy
+1314,8962288;Per F. V. Hasle
+1315,8962289;Anne-Kathrine Kjær Christensen
+1316,8962290;Robert Jordan
+1317,8962291;Kit Hang Leung
+1318,8962292;J. Patrick Biddix
+1319,8962293;Bolanle Olaniran
+1320,8962294;Anita L. Blanchard
+1321,8962295;Stephen Thorpe
+1322,8962296;Wengao Gong
+1323,8962297;Vincent B. Y. Ooi
+1324,8962298;Shawn Apostel
+1325,8962299;Moe Folk
+1326,8962300;Cheryl Amundsen
+1327,8962301;Elahe Sohbat
+1328,8962302;Ashok Darisipudi
+1329,8962303;Sushil Kumar Sharma
+1330,8962304;Mirjam Weder
+1331,8962305;Bradley M. Okdie
+1332,8962306;Kevin Eric DePew
+1333,8962307;Sarah Stewart
+1334,8962308;Elisabeth Pankl
+1335,8962309;Jenna Ryan
+1336,8962310;Julie D. Woletz
+1337,8962311;Alison Ruth
+1338,8962312;Karl-Heinz Renner
+1339,8962313;Astrid Schütz
+1340,8962314;Deborah Vess
+1341,8962315;Mikkel Godsk
+1342,8962316;Anja Bechmann Petersen
+1343,8962317;Courtney Crummett
+1344,8962318;Anna Perrault
+1345,8962319;Joseph E. Burns
+1346,8962320;Dianna Laurent
+1347,8962321;Cheng-chao Su
+1348,8962322;Karen Garcia
+1349,8962323;Jonathan Cohn
+1350,8962324;Dimitris Kiritsis
+1351,8962325;Samir M. Iqbal
+1352,8962326;Rashid Bashir
+1353,8962327;B. John Oommen
+1354,8962328;Sudip Misra
+1355,8962329;Ning Xi 0001
+1356,8962330;King Wai Chiu Lai
+1357,8962331;Heping Chen
+1358,8962332;Alon Wolf
+1359,8962333;Moshe Shoham
+1360,8962334;Srini Ramaswamy
+1361,8962335;Hemant Joshi
+1362,8962336;William Richmond
+1363,8962337;T. Joseph Lui
+1364,8962338;Kazuyoshi Ishii
+1365,8962339;Kinnya Tamaki
+1366,8962340;Wootae Jeong
+1367,8962341;Richard D. Patton
+1368,8962342;Peter C. Patton
+1369,8962343;Xavier Delorme
+1370,8962344;Alexandre Dolgui
+1371,8962345;Mohamed Essafi
+1372,8962346;Laurent Linxe
+1373,8962347;Damien Poyard
+1374,8962348;Christian Dannegger
+1375,8962349;Keiichi Shirase
+1376,8962350;Susumu Fujii
+1377,8962351;Deming Chen
+1378,8962352;Aníbal Ollero
+1379,8962353;Ángel Rodriguez Castaño
+1380,8962354;Mark R. Lehto
+1381,8962355;Mary F. Lesch
+1382,8962356;William J. Horrey
+1383,8962357;Nicholas Kottenstette
+1384,8962358;Panos J. Antsaklis
+1385,8962359;Yukio Hasegawa
+1386,8962360;José A. Ceroni
+1387,8962361;Marwan A. Simaan
+1388,8962362;Gary R. Bertoline
+1389,8962363;Nathan W. Hartman
+1390,8962364;Nicoletta Adamo-Villani
+1391,8962365;Luis Basañez
+1392,8962366;Raúl Suárez
+1393,8962367;Christopher Bissell
+1394,8962368;H. Dieter Rombach
+1395,8962369;John D. Lee
+1396,8962370;Bobbie D. Seppelt
+1397,8962371;István Vajk
+1398,8962372;Jenö Hetthéssy
+1399,8962373;Ruth Bars
+1400,8962374;Anatoly Pashkevich
+1401,8962375;Juan Diego Velásquez
+1402,8962376;Xin W. Chen
+1403,8962377;Sang Won Yoon
+1404,8962378;Hoo Sang Ko
+1405,8962379;Yoshiharu Inaba
+1406,8962380;Shinsuke Sakakibara
+1407,8962381;Birgit Graf
+1408,8962382;Harald Staab
+1409,8962383;Timothy I. Salsbury
+1410,8962384;Cecilia R. Aragon
+1411,8962385;Alberto Isidori
+1412,8962386;Daniel J. Power
+1413,8962387;Ramesh Sharda
+1414,8962388;Francisco P. Maturana
+1415,8962389;Dan L. Carnahan
+1416,8962390;Kenwood H. Hall
+1417,8962391;Bijay K. Jayaswal
+1418,8962392;Shimon Y. Nof
+1419,8962393;Tibor Vámos
+1420,8962394;Wing Bun Lee
+1421,8962395;Benny C. F. Cheung
+1422,8962396;S. K. Kwok
+1423,8962397;M. Alkan Donmez
+1424,8962398;Johannes A. Soons
+1425,8962399;Pat P. Banerjee
+1426,8962400;Clyde W. Holsapple
+1427,8962401;Sharath Sasidharan
+1428,8962402;Peter Terwiesch
+1429,8962403;Christopher Ganz
+1430,8962404;Satish C. Mohleji
+1431,8962405;Dean F. Lamiano
+1432,8962406;Sebastian V. Massimini
+1433,8962407;Yuko J. Nakanishi
+1434,8962408;Rodrigo J. Cruz Di Palma
+1435,8962409;Manuel Scavarda Basaldúa
+1436,8962410;Sirkka-Liisa Jämsä Jounela
+1437,8962411;Greg Baiden
+1438,8962412;Peter Kopacek
+1439,8962413;Edward W. Tunstel
+1440,8962414;Nick A. Ivanescu
+1441,8962415;Yael Edan
+1442,8962416;Shufeng Han
+1443,8962417;Naoshi Kondo
+1444,8962418;Brian Carlisle
+1445,8962419;Branko Sarh
+1446,8962420;James Buttrick
+1447,8962421;Clayton Munk
+1448,8962422;Richard Bossi
+1449,8962423;Daniel Castro-Lacouture
+1450,8962424;Darwin G. Caldwell
+1451,8962425;Steve Davis 0001
+1452,8962426;René J. Moreno Masey
+1453,8962427;John O. Gray
+1454,8962428;Mitsuo Gen
+1455,8962429;Lin Lin 0008
+1456,8962430;Daniel W. Repperger
+1457,8962431;Chandler A. Phillips
+1458,8962432;Florin Gheorghe Filip
+1459,8962433;Kauko Leiviskä
+1460,8962434;Parasuram Balasubramanian
+1461,8962435;Brandon Savage
+1462,8962436;Michael Kaplan
+1463,8962437;Chin-Yin Huang
+1464,8962438;Dana S. Nau
+1465,8962439;Robert S. Parker
+1466,8962440;Thomas F. Edgar
+1467,8962441;Juergen Hahn
+1468,8962442;Gyula Vastag
+1469,8962443;Moshe Yerushalmy
+1470,8962444;Jaewoo Chung
+1471,8962445;Jose M. A. Tanchoco
+1472,8962446;Jocelyne Troccaz
+1473,8962447;Edward F. Watson
+1474,8962448;Karyn Holmes
+1475,8962449;Tae-Eog Lee
+1476,8962450;Theodore J. Williams
+1477,8962451;Gérard Morel
+1478,8962452;Jean-François Pétin
+1479,8962453;Timothy L. Johnson
+1480,8962454;Friedrich Pinnekamp
+1481,8962455;Alessandro Pasetti
+1482,8962456;Walter Schaufelberger
+1483,8962457;Bozenna Pasik-Duncan
+1484,8962458;Matthew Verleger
+1485,8962459;Petr Horácek
+1486,8962460;Birgit Vogel-Heuser
+1487,8962461;Steven J. Landry
+1488,8962462;Rolf Isermann
+1489,8962463;Jackson He
+1490,8962464;Enrique Castro-Leon
+1491,8962465;Piercarlo Ravazzi
+1492,8962466;Agostino Villa
+1493,8962467;Jianming Lian
+1494,8962468;Stanislaw H. Zak
+1495,8962469;Henry Mirsky
+1496,8962470;Jörg Stelling
+1497,8962471;Rudiyanto Gunawan
+1498,8962472;Neda Bagheri
+1499,8962473;Stephanie R. Taylor
+1500,8962474;Eric Kwei
+1501,8962475;Jason E. Shoemaker
+1502,8962476;Francis J. Doyle III
+1503,8962477;Dieter Spath
+1504,8962478;Martin Braun
+1505,8962479;Wilhelm Bauer
+1506,8962480;Norbert Elkmann
+1507,8962481;Justus Hortig
+1508,8962482;Markus Fritzsche
+1509,8962483;Carlos Eduardo Pereira
+1510,8962484;Peter Neumann
+1511,8962485;Wolfgang Mann
+1512,8962486;Mary L. Cummings
+1513,8962487;Sylvain Bruni
+1514,8962488;François B. Vernadat
+1515,8962489;Heinz-Hermann Erbe
+1516,8962490;Gianluca Paravati
+1517,8962491;Hanno Hildmann
+1518,8962492;Benjamin Hirsch
+1519,8962493;Andrea Lanzi
+1520,8962494;Sai-Keung Wong
+1521,8962495;Fabrizio Cutolo
+1522,8962496;Giani Petri
+1523,8962497;Christiane Gresse von Wangenheim
+1524,8962498;Adriano Ferreti Borgatto
+1525,8962499;Michael Mcloughlin
+1526,8962500;Amol Dattatraya Mali
+1527,8962501;Christian Stein
+1528,8962502;Dilek Dogan
+1529,8962503;Murat Çinar
+1530,8962504;Hakan Tüzün
+1531,8962505;Mattia Thibault
+1532,8962506;Isabel Cristina Siqueira da Silva
+1533,8962507;João Ricardo Bittencourt
+1534,8962508;Keith Nesbitt
+1535,8962509;Eugene Nalivaiko
+1536,8962510;Jeffery Jonathan Joshua Davis
+1537,8962511;Robert Kozma 0001
+1538,8962512;Florian Schübeler
+1539,8962513;Manuel Schmidt
+1540,8962514;Yann Savoye
+1541,8962515;Daniel N. Boulos
+1542,8962516;Jule Hildmann
+1543,8962517;Jaime Arias
+1544,8962518;Raphaël Marczak
+1545,8962519;Myriam Desainte-Catherine
+1546,8962520;Rebecca Ruige Xu
+1547,8962521;Michele Geronazzo
+1548,8962522;Inês Amaral
+1549,8962523;Frederico Fonseca
+1550,8962524;Felipe Oviedo Frosi
+1551,8962525;Simena Dinas
+1552,8962526;Inma Carpe
+1553,8962527;Oytun Kal
+1554,8962528;Yavuz Samur
+1555,8962529;Cetin Tuker
+1556,8962530;Thomas Lilge
+1557,8962531;Nina Rosa
+1558,8962532;Wolfgang Hürst
+1559,8962533;Remco C. Veltkamp
+1560,8962534;Peter J. Werkhoven
+1561,8962535;Yanxiang Zhang 0001
+1562,8962536;Qingqing Zhao
+1563,8962537;Huy Kang Kim
+1564,8962538;Jiyoung Woo
+1565,8962539;Leigh Achterbosch
+1566,8962540;Peter Vamplew 0001
+1567,8962541;Douglas Brown
+1568,8962542;Jukka Vahlo
+1569,8962543;Aki Koponen
+1570,8962544;Patrick C. K. Hung
+1571,8962545;Laura Rafferty
+1572,8962546;Marcelo Fantinato
+1573,8962547;Krystina S. Madej
+1574,8962548;Tansel Tepe
+1575,8962549;Devkan Kaleci
+1576,8962550;Ross Berger
+1577,8962551;Stefania Serafin
+1578,8962552;George Papagiannakis
+1579,8962553;Efstratios Geronikolakis
+1580,8962554;Maria Pateraki
+1581,8962555;Víctor M. López-Menchero
+1582,8962556;Michael Tsioumas
+1583,8962557;Stella Sylaiou
+1584,8962558;Fotis Liarokapis
+1585,8962559;Athina Grammatikopoulou
+1586,8962560;Kosmas Dimitropoulos
+1587,8962561;Nikolaos Grammalidis
+1588,8962562;Nikolaos Partarakis
+1589,8962563;George Margetis
+1590,8962564;Giannis Drossis
+1591,8962565;Martha Vassiliadi
+1592,8962566;Alan Chalmers
+1593,8962567;Constantine Stephanidis
+1594,8962568;Nadia Magnenat-Thalmann
+1595,8962569;Howard Kaplan
+1596,8962570;Anna Pyayt
+1597,8962571;Jong Weon Lee 0002
+1598,8962572;Han Kyu Yoo
+1599,8962573;Jorge Roa
+1600,8962574;Murat Yilmaz 0001
+1601,8962575;Luís Aly
+1602,8962576;Rui Penha
+1603,8962577;Gilberto Bernardes
+1604,8962578;Eike Langbehn
+1605,8962579;Frank Steinicke
+1606,8962580;David Churchill
+1607,8962581;Mike Preuss
+1608,8962582;Florian Richoux
+1609,8962583;Gabriel Synnaeve
+1610,8962584;Alberto Uriarte
+1611,8962585;Santiago Ontañón
+1612,8962586;Michal Certický
+1613,8962587;John Quarles
+1614,8962588;Matt Dombrowski
+1615,8962589;Jaime Lochner
+1616,8962590;Benjamin Hebgen
+1617,8962591;Kokolo Ikeda
+1618,8962592;Sicilia Ferreira Judice
+1619,8962593;Danielle Marie Olson
+1620,8962594;Elisabeth Ainsley Sutherland
+1621,8962595;Cagri Hakan Zaman
+1622,8962596;D. Fox Harrell
+1623,8962597;Hartmut Koenitz
+1624,8962598;Farkhund Iqbal
+1625,8962599;Benjamin Yankson
+1626,8962600;Tonguc Ibrahim Sezen
+1627,8962601;Adnan Mahmood
+1628,8962602;Bernard Butler
+1629,8962603;Hushairi Zen
+1630,8962604;Brendan Jennings
+1631,8962605;Metin Arica
+1632,8962606;Burak Tezateser
+1633,8962607;Alonso Gragera Aguaza
+1634,8962608;Jean-François Baffier
+1635,8962609;Vorapong Suppakitpaisarn
+1636,8962610;Antti Knutas
+1637,8962611;Jennifer Coleman Dowling
+1638,"8962612;""Lal """"Lila"""" Bozgeyikli"""
+1639,8962613;Emily Peed
+1640,8962614;Newton Lee
+1641,8962615;Werner Ravyse
+1642,8962616;Kimmo Tarkkanen
+1643,8962617;A. Seugnet Blignaut
+1644,8962618;Erkki Sutinen
+1645,8962619;Jouni Smed
+1646,8962620;Ryan P. McMahan
+1647,8962621;Di Wu 0001
+1648,8962622;Yi-Hao Ke
+1649,8962623;Jian He
+1650,8962624;Yong Li 0008
+1651,8962625;Min Chen 0003
+1652,8962626;Selcen Ozturkcan
+1653,8962627;Masahiko Itoh
+1654,8962628;Ozan Özkan
+1655,8962629;Özhan Tingöy
+1656,8962630;Ramazan S. Aygün
+1657,8962631;Vineetha Bettaiah
+1658,8962632;Tom Alexander Garner
+1659,8962633;Wendy A. Powell
+1660,8962634;Vaughan Powell
+1661,8962635;Krzysztof Pietroszek
+1662,8962636;Kim J. L. Nevelsteen
+1663,8962637;Sylvester Arnab
+1664,8962638;Andrés Adolfo Navarro Newball
+1665,8962639;Borja Barinaga López
+1666,8962640;Isidro Moreno Sánchez
+1667,8962641;Natasha Bulatovic Trygg
+1668,8962642;Petter Skult
+1669,8962643;Gabriele D'Angelo
+1670,8962644;Stefano Ferretti
+1671,8962645;Moreno Marzolla
+1672,8962646;Kazuki Yoshizoe
+1673,8962647;Martin Müller 0003
+1674,8962648;Celia Hodent
+1675,8962649;Sercan Sengün
+1676,8962650;Petyo Budakov
+1677,8962651;Vlasios Kasapakis
+1678,8962652;Damianos Gavalas
+1679,8962653;Elena Dzardanova
+1680,8962654;Mikhail Fiadotau
+1681,8962655;Ruoqi Sun
+1682,8962656;Lizhaung Ma
+1683,8962657;Susan Johnston
+1684,8962658;Niels Christian Nilsson
+1685,8962659;Ryuya Akase
+1686,8962660;Yoshihiro Okada
+1687,8962661;Matthew Yee-King
+1688,8962662;Igor Dall'Avanzi
+1689,8962663;Kenneth C. C. Yang
+1690,8962664;Yowei Kang
+1691,8962665;Duncan A. H. Williams
+1692,8962666;Peter I. Cowling
+1693,8962667;Damian T. Murphy
+1694,8962668;Satyaki Roy
+1695,8962669;Pratiti Sarkar
+1696,8962670;Surojit Dey
+1697,8962671;Dominik Borer
+1698,8962672;Simone Guggiari
+1699,8962673;Robert W. Sumner
+1700,8962674;Martin Guay
+1701,8962675;David C. Gibson
+1702,8962676;Leah Irving
+1703,8962677;Katy Scott
+1704,8962678;Ilaria Mariani
+1705,8962679;Fabrizio Lamberti
+1706,8962680;Federico Manuri
+1707,8962681;Andrea Sanna
+1708,8962682;Vicki Lau
+1709,8962683;Kosuke Kaneko
+1710,8962684;Ulka Chandini Pendit
+1711,8962685;Syamsul Bahrin Zaibon
+1712,8962686;Juliana Aida Abu Bakar
+1713,8962687;Setsuko Ishii
+1714,8962688;Mark H. M. Winands
+1715,8962689;Takenobu Takizawa
+1716,8962690;Takeshi Ito
+1717,8962691;Takuya Hiraoka
+1718,8962692;Kunihito Hoki
+1719,8962693;Mehmet Ilker Berkman
+1720,8962694;Ecehan Akan
+1721,8962695;Carol Luckhardt Redfield
+1722,8962696;Tsung-Chih Tsai
+1723,8962697;Jouni Ikonen
+1724,8962698;Laura Ricci
+1725,8962699;Emanuele Carlini
+1726,8962700;Hiroshi Yoshikawa
+1727,8962701;Tim McGraw
+1728,8962702;Umair Azfar Khan
+1729,8962703;Jacob Schrum
+1730,8962704;Risto Miikkulainen
+1731,8962705;Anna E. Yankovskaya
+1732,8962706;Kemal Akay
+1733,8962707;Cansu Nur Simsek
+1734,8962708;Alexandros Gouvatsos
+1735,8962709;Zhidong Xiao
+1736,8962710;Chen Guo
+1737,8962711;Shuang Wei
+1738,8962712;Yingjie Victor Chen
+1739,8962713;Lionel Garnier
+1740,8962714;Jean-Paul Bécar
+1741,8962715;Lucie Druoton
+1742,8962716;Laurent Fuchs
+1743,8962717;Géraldine Morin
+1744,8962718;Mehmet Kosa
+1745,8962719;Ahmet Uysal
+1746,8962720;Rodrigo Torres
+1747,8962721;Marlene Palafox
+1748,8962722;Diogo Cocharro
+1749,8962723;Evren Bozgeyikli
+1750,8962724;Christos Mousas
+1751,8962725;Christos-Nikolaos Anagnostopoulos
+1752,8962726;Min Wang 0024
+1753,8962727;Lizhuang Ma
+1754,8962728;Aaron Hitchcock
+1755,8962729;Kelvin Sung
+1756,8962730;Arindam Chaudhuri
+1757,8962731;Digdem Sezen
+1758,8962732;Roberto Dillon
+1759,8962733;Paulo Zaffari
+1760,8962734;Nicusor Nedelcu
+1761,8962735;Gilson A. Giraldi
+1762,8962736;José Karam-Filho
+1763,8962737;Jolanda G. Tromp
+1764,8962738;Chung V. Le
+1765,8962739;Tho L. Nguyen
+1766,8962740;Brooke Morrill
+1767,8962741;Sabrina Culyba
+1768,8962742;Bill Kapralos
+1769,8962743;Alvaro Uribe-Quevedo
+1770,8962744;Adam Dubrowski
+1771,8962745;Sehar Shahzad Farooq
+1772,8962746;Kyung-Joong Kim
+1773,8962747;Tariq Alrimawi
+1774,8962748;Jin Huang
+1775,8962749;Chris North 0001
+1776,8962750;Jaci Lee Lederman
+1777,8962751;Ali Adjorlu
+1778,8962752;G. Stewart Von Itzstein
+1779,8962753;Mark Billinghurst
+1780,8962754;Ross T. Smith
+1781,8962755;Bruce H. Thomas
+1782,8962756;Rojin Vishkaie
+1783,8962757;Richard M. Levy
+1784,8962758;Masasuke Yasumoto
+1785,8962759;Catia Prandi
+1786,8962760;Paola Salomoni
+1787,8962761;Silvia Mirri
+1788,8962762;Daniel Thalmann
+1789,8962763;Anthony Lewis Brooks
+1790,8962764;William Russell Pensyl
+1791,8962765;Xiaoping Min
+1792,8962766;Song Shuli Lily
+1793,8962767;Sergio Rodríguez Valdunciel
+1794,8962768;Francesco De Pace
+1795,8962769;Sébastien Deguy
+1796,8962770;Adalberto L. Simeone
+1797,8962771;Eric Hodgson
+1798,8962772;Sami Hyrynsalmi
+1799,8962773;Kai K. Kimppa
+1800,8962774;Ferdinand Schober
+1801,8962775;Jon Ram Bruun-Pedersen
+1802,8962776;David W. Rick
+1803,8962777;Ken S. McAllister
+1804,8962778;Judd Ethan Ruggill
+1805,8962779;Wil M. P. van der Aalst
+1806,8962780;Nijaz Bajgoric
+1807,8962781;Michael C. Loui
+1808,8962782;Keith W. Miller 0001
+1809,8962783;K. C. Hui
+1810,8962784;Inês Lynce
+1811,8962785;Vasco M. Manquinho
+1812,8962786;João Marques-Silva 0001
+1813,8962787;Pascal Volino
+1814,8962788;Christiane Luible
+1815,8962789;Yanhong A. Liu
+1816,8962790;Jeffrey J. P. Tsai
+1817,8962791;Min Chen 0001
+1818,8962792;Karl Tuyls
+1819,8962793;Ann Nowé
+1820,8962794;Peter J. Denning
+1821,8962795;Stéphane Lafortune
+1822,8962796;Jeremy R. Cooperstock
+1823,8962797;Slobodan Z. Mijalkovic
+1824,8962798;Milan D. Mihajlovic
+1825,8962799;Annie Combelles
+1826,8962800;Pavel Zezula
+1827,8962801;Vlastislav Dohnal
+1828,8962802;Michal Batko
+1829,8962803;Hongxin Zhang 0001
+1830,8962804;Xinguo Liu
+1831,8962805;Hujun Bao
+1832,8962806;Chih-Chin Lai
+1833,8962807;Shing-Hwang Doong
+1834,8962808;Chih-Hung Wu
+1835,8962809;Frank Zhigang Wang
+1836,8962810;Sining Wu
+1837,8962811;Derek Yuhui Deng
+1838,8962812;Na Helian
+1839,8962813;Harry Chia-Hung Hsu
+1840,8962814;David Cope
+1841,8962815;Zita A. Vale
+1842,8962816;Steven M. Barnhart
+1843,8962817;Richard De Lisi
+1844,8962818;Wenyi Zhao
+1845,8962819;Yiyu Yao
+1846,8962820;Ning Zhong 0001
+1847,8962821;Hojung Lim
+1848,8962822;Amrit L. Goel
+1849,8962823;Bharat Joshi
+1850,8962824;Dhiraj K. Pradhan
+1851,8962825;Jack J. Stiffler
+1852,8962826;Angel Barriga
+1853,8962827;Carlos Jesús Jiménez-Fernández
+1854,8962828;Manuel Valencia-Barrero
+1855,8962829;Indranil Gupta
+1856,8962830;Ali R. Hurson
+1857,8962831;Krishna M. Kavi
+1858,8962832;John Paul Loucky
+1859,8962833;Oliver Yu
+1860,8962834;Bran Selic
+1861,8962835;Issam W. Damaj
+1862,8962836;Farn Wang
+1863,8962837;Mark Allen Weiss
+1864,8962838;Xiaolong Jin
+1865,8962839;Kwok Ching Tsui
+1866,8962840;George C. Polyzos
+1867,8962841;George Xylomenos
+1868,8962842;Swapna S. Gokhale
+1869,8962843;Ruifeng Xu
+1870,8962844;Sumanta N. Pattanaik
+1871,8962845;Bernd Burgstaller
+1872,8962846;Bernhard Scholz
+1873,8962847;Manfred Glesner
+1874,8962848;Tudor Murgan
+1875,8962849;Thomas Hollstein
+1876,8962850;Xindong Wu 0001
+1877,8962851;Yan Zhang
+1878,8962852;Xingquan Zhu 0001
+1879,8962853;Tatsuya Suda
+1880,8962854;Daniel Solow
+1881,8962855;Angela C. Sodan
+1882,8962856;Lipo Wang
+1883,8962857;Xiuju Fu
+1884,8962858;Cyril S. Ku
+1885,8962859;Johan Brichau
+1886,8962860;Ruzanna Chitchyan
+1887,8962861;Awais Rashid
+1888,8962862;Theo D'Hondt
+1889,8962863;Doron A. Peled
+1890,8962864;Patrizio Pelliccione
+1891,8962865;Paola Spoletini
+1892,8962866;Ao Tang
+1893,8962867;Lachlan L. H. Andrew
+1894,8962868;Mung Chiang
+1895,8962869;Steven H. Low
+1896,8962870;Walter F. Tichy
+1897,8962871;Klaus-Jürgen Bathe
+1898,8962872;J. Barrie Thompson
+1899,8962873;Yonghuai Liu
+1900,8962874;Aleksandar Milenkovic
+1901,8962875;Torleiv Kløve
+1902,8962876;Robert J. Schalkoff
+1903,8962877;Shiao-Li Tsao
+1904,8962878;Yi-Bing Lin
+1905,8962879;Rong Wang
+1906,8962880;John Linn
+1907,8962881;Patricia Melin
+1908,8962882;Oscar Castillo 0001
+1909,8962883;Jaideep Srivastava
+1910,8962884;Jamshid A. Vayghan
+1911,8962885;Ee-Peng Lim
+1912,8962886;San-Yih Hwang
+1913,8962887;Jau-Hwang Wang
+1914,8962888;Bhaskar DasGupta
+1915,8962889;Lusheng Wang
+1916,8962890;Chengqi Zhang
+1917,8962891;Zili Zhang
+1918,8962892;Du Zhang
+1919,8962893;Avinash Sahay
+1920,8962894;Eric Y. T. Juan
+1921,8962895;Heather K. Harton
+1922,8962896;Murali Sitaraman
+1923,8962897;Joan Krone
+1924,8962898;Simon Maskell
+1925,8962899;Abdullah Uz Tansel
+1926,8962900;Weiyi Meng
+1927,8962901;Hai He
+1928,8962902;Gábor Horváth 0001
+1929,8962903;Frederick W. B. Li
+1930,8962904;Rashid Ansari
+1931,8962905;Cheng Chang
+1932,8962906;William D. Reynolds Jr.
+1933,8962907;Radu Prodan
+1934,8962908;Adam M. Johansen
+1935,8962909;Olaf Chitil
+1936,8962910;Jichiang Tsai
+1937,8962911;Yi-Min Wang
+1938,8962912;Jay Smith
+1939,8962913;Howard Jay Siegel
+1940,8962914;Anthony A. Maciejewski
+1941,8962915;Davide Ciucci
+1942,8962916;Gianpiero Cattaneo
+1943,8962917;Norbert Mundorf
+1944,8962918;Lutz M. Kolbe
+1945,8962919;Alastair R. Beresford
+1946,8962920;David J. Scott
+1947,8962921;Appa Rao Korukonda
+1948,8962922;Jonathan Katz
+1949,8962923;Diana K. Byrne
+1950,8962924;Casimer M. DeCusatis
+1951,8962925;Qingping Lin
+1952,8962926;Liang Zhang 0024
+1953,8962927;Dan Zhang 0006
+1954,8962928;Zhuming Bi
+1955,8962929;Zhen Gao
+1956,8962930;Marc M. Van Hulle
+1957,8962931;Shih-Lien Lu
+1958,8962932;Ravichandran Ramachandran
+1959,8962933;Robin Abraham
+1960,8962934;Margaret M. Burnett
+1961,8962935;Martin Erwig
+1962,8962936;Thomas R. Jefferson
+1963,8962937;Carlton H. Scott
+1964,8962938;Alexandra Stadler
+1965,8962939;Haik Lorenz
+1966,8962940;Magdi N. Kamel
+1967,8962941;Charles P. Satterthwaite
+1968,8962942;Andrea Kienle
+1969,8962943;James Johnson
+1970,8962944;Simone Smorfa
+1971,8962945;Mauro Olivieri
+1972,8962946;Roberto Mancuso
+1973,8962947;Jaroslav Krivánek
+1974,8962948;David B. Leake
+1975,8962949;Thomas Reichherzer
+1976,8962950;Lawrence Snyder
+1977,8962951;Sushil Jajodia
+1978,8962952;Tatsuya Akutsu
+1979,8962953;Lihong Zhang
+1980,8962954;Howard Eisner
+1981,8962955;Jeffrey J. Evans
+1982,8962956;Juho Kannala
+1983,8962957;Janne Heikkilä
+1984,8962958;Sami S. Brandt
+1985,8962959;Xiaocong Fan
+1986,8962960;Robert Akl
+1987,8962961;Robert R. McLeod
+1988,8962962;Chang Nian Zhang
+1989,8962963;Xiao Wei Liu
+1990,8962964;Andrew D. McGettrick
+1991,8962965;Barbara M. Chapman
+1992,8962966;Ernst L. Leiss
+1993,8962967;Albert Mo Kim Cheng
+1994,8962968;Robbert van Renesse
+1995,8962969;Chengfei Liu
+1996,8962970;Yanchun Zhang
+1997,8962971;Erik Reinhard
+1998,8962972;Erum Arif Khan
+1999,8962973;Ahmet Oguz Akyüz
