@@ -22,5 +22,5 @@ The replacement of the ".," values may not have been required everywhere, but it
 ## Header Modifications
 Headers were all modified to be lower case and without spaces for easier manipulation and consistency.
 
-## Value Creation
-
+## Creating Indexes and Citations
+A unique index was created for each paper. There were ~500 missing indexes, so that existing ones (which were unique) were dropped and new unique indexes were created. A column with number of citations existed, but it did not point to specific papers. An array of unique IDs was created equivalent to the number of citations each paper had. This was done with the function `create_cited_by_column(df)` in [neo4j-kaggle-preprocess](src/neo4j-kaggle-preprocess.py)
