@@ -16,6 +16,9 @@ output_author.csv
 # Authors and Citations (Adam)
 
 # Creating nodes for authors
+
+# TODO: add split/UNWIND? to create a node for each name in a row
+
 conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
 query_string='''
     LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-b7855507-1cee-4692-8ff3-f3e64ffe6e1a/scopusBYUEngr17_21.csv' 
