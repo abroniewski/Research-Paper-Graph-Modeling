@@ -1,0 +1,7 @@
+TODO: Change article to journal in column "document type paper"
+TODO: change node "article" to paper
+TODO: rename conference paper to proceeding
+TODO: processing -> strip year from source_title into new column called conference year
+TODO: Anna -> how to make use of communities in queries once found?
+TODO: Anna -> publishing year as own node between proceedings and journals?
+TODO: Question -> can a paper get published in conference AND journal?
