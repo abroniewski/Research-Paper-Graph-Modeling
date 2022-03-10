@@ -28,7 +28,7 @@ def set_index_as_article_number(df):
     """
     # Makes the index a column in df, which we can use as article_no
     df = df.reset_index()
-    # We want to rename the index column, but since that is difficult (cuz I no Google)
+    # We want to rename the index column, but since that is difficult (cuz I no want to Google)
     # we are copying index col to create a new article_no col
     df["article_no"] = df["index"]
     # Now we need to drop this index named col
@@ -73,11 +73,15 @@ def extract_keyword_n_give_ids_to_them(df):
 
     # kw_list = [kw.strip() for kw in keywords_list]
     kw_list: list[str] = []
+    kw_list = []
     for kw in keywords_list:
-        kw_list.append( kw.strip )
+        kw_list.append( kw.strip().lower() )
     unique_keywords_list = set(kw_list)
+
     df_kw = pd.DataFrame(unique_keywords_list, columns=["keyword"])
     df_kw = df_kw.reset_index()
+    # We want to rename the index column, but since that is difficult (cuz I no want to Google)
+    # we are copying index col to create a new article_no col
     df_kw["keyword_id"] = df_kw["index"]
     df_kw = df_kw.drop("index", axis=1)
     # We assume here a csv of keyword -> id mapping is created.
