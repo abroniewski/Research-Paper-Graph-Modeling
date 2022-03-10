@@ -25,13 +25,17 @@ Headers were all modified to be lower case and without spaces for easier manipul
 ## Creating Indexes and Citations
 A unique index was created for each paper. There were ~500 missing indexes, so that existing ones (which were unique) were dropped and new unique indexes were created. A column with number of citations existed, but it did not point to specific papers. An array of unique IDs was created equivalent to the number of citations each paper had. This was done with the function `create_cited_by_column(df)` in [neo4j-kaggle-preprocess](src/neo4j-kaggle-preprocess.py)
 
-## Assuming Architechture to be
+## Assuming Graph DB Architechture to be
 The following heading each corresponds to a different entity in the database. We document here the attributes and the 
 relationship ids for each.
-### Articles
+
+### Article Nodes
+it will have these attributes:
 - article_no
 - title
 - year
+- 
+### Keyword Nodes
 - index_keywords
 
 ## Depricated section
