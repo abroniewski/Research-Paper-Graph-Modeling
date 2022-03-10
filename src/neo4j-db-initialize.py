@@ -128,14 +128,32 @@ a = prepare_entity_n_truncate(project_dir, entity_file=article_og, entity_header
 print( a )
 
 conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
-query_string='''
-    LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/output/output_article_2.csv' 
-        AS row FIELDTERMINATOR ';'
-    WITH row.article as article,
-    row.cite AS cite,
-    row["cite-label"] AS cite_label,
-    row["editor"] AS editor
-    return * LIMIT 30 ;
-    '''
 
-conn.query(query_string, db='neo4j')
+query_string_to_create_article_nodes = """
+    LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/article.csv'
+    AS row FIELDTERMINATOR ','
+    CREATE (a:Article {article_no: toInteger(row.article_no),
+                       title: row.title,
+                       year: row.year })
+    return *;
+"""
+conn.query(query_string_to_create_article_nodes, db='neo4j')
+
+query_to_create_keywords_nodes = """
+    LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keywords.csv'
+    AS row FIELDTERMINATOR ','
+    CREATE (k:Keyword {keyword: row.keyword,
+                       keyword_id:  toInteger(row.keyword_id) })
+    return * ;
+"""
+conn.query(query_to_create_keywords_nodes, db='neo4j')
+
+query_connect_article_to_keywords = """
+LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keyword_mapping.csv'
+AS row FIELDTERMINATOR ','
+MATCH (a:Article {article_no: toInteger(row.article_no)} )
+MATCH (k:Keyword {keyword_id: toInteger(row.keyword_id)})
+CREATE (a)-[:has_keyword]->(k)
+RETURN a, k;
+"""
+conn.query(query_connect_article_to_keywords, db='neo4j')
