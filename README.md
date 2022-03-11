@@ -1,9 +1,8 @@
 # Lab 1 Semantic Data Analysis
 Convert a DBLP (Computer Science Bibliography) XML file to CSV format.
 
-### Resources 
-Link to OneDrive:
-https://universitelibrebruxelles-my.sharepoint.com/personal/adam_broniewski_ulb_be/_layouts/15/onedrive.aspx?ct=1646567441278&or=OWA%2DNT&cid=dada99ac%2D1ba5%2D81b3%2D6166%2D77e719e536e9&id=%2Fpersonal%2Fadam%5Fbroniewski%5Fulb%5Fbe%2FDocuments%2FSDM%20%2D%20Lab01%20%2D%20DBLP%20Research%20Paper%20Modelling
+## Data Source
+Data being used is the BYU Engineering Publications in Scopus 2017-2021. The dataset is available [on kaggle here](https://www.kaggle.com/dpixton/byu-engineering-publications-in-scopus-201721/version/1)
 
 ## Notes on loading data to neo4j
 
