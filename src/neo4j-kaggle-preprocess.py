@@ -6,7 +6,7 @@ import logging
 import sys
 from neo4j.exceptions import ServiceUnavailable
 import pandas as pd
-from random import choice
+from random import choice, choices
 import csv
 from os.path import join
 
@@ -14,13 +14,42 @@ from os.path import join
 # Global Variable
 ##################################
 PROCESSED_DIR = "../data/processed/"
-OUTPUT_FILE_PATH = "../data/processed/kaggle_v1.csv"
+OUTPUT_FILE_PATH = "../data/processed/kaggle_v2.csv"
+ADAM_OUTPUT_PATH = "/Users/adambroniewski/Library/Application Support/Neo4j Desktop/Application/relate-data/dbmss/dbms-d2865cee-b5fb-4536-bdc8-964b408bb3f8/import"
 
-# This python script is used to intialize the database and create all nodes and edges
+
+# This python script is used to initialize the database and create all nodes and edges
 
 ##################################
 # Pre-process Columns
 ##################################
+
+def rename_dataset_variables(df):
+    """
+    Rename article to journal in column "document type"
+    Rename conference paper to proceeding
+    :param pd.DataFrame df:
+    :return: pd.DataFrame
+    """
+    # rename columns to remove spaces, case and special characters
+    df.rename(
+        columns={'Authors': 'authors', 'Author(s) ID': 'authors_id', 'Title': 'article', 'Year': 'publication_year',
+                 'Source title': 'source_title', 'Volume': 'volume', 'Issue': 'issue', 'Art. No.': 'article_no',
+                 'Cited by': 'cited_by', 'Author Keywords': 'author_keywords', 'Index Keywords': 'index_keywords',
+                 'Document Type': 'document_type'}, inplace=True)
+    df.loc[(df['document_type'] == "Article", 'document_type')] = "Journal"
+    df.loc[(df['document_type'] == "Conference Paper", 'document_type')] = "Proceeding"
+    # use regex to find all conference names that start with {4} numbers [0-9]. For .match(), you include
+    # a regex parameter inside r'()'
+    df.loc[(df['source_title'].isna(), 'source_title')] = "TEMP"  # TODO: remove this line after cleaning up CSV. This
+    # is only included to test the line below.
+    # TODO: HELP -> how to just return the year from the conference name instead of entire title.
+    # TODO: HELP -> how exactly does the df.loc() function work?
+    # df['conference_year'] = df.loc[(df['source_title'].str.match(r'(^[0-9]{4})'), 'source_title')]
+    df = df.drop(['Page start', 'Page end', 'Page count', 'DOI', 'Link', 'Affiliations', 'Authors with affiliations',
+             'Abstract', 'Publication Stage', 'Access Type', 'Source', 'EID'], axis='columns')
+    return df
+
 def set_index_as_article_number(df):
     """
     :param pd.DataFrame df:
@@ -48,24 +77,29 @@ def create_cited_by_column(df):
     list_of_cited_by = []
     for i in range(len(df)):
         # choice function randomly samples from the provided list
-        list_of_cited_by.append( choice( df["article_no"] ) )
+        # will add a random number of citations (min:0, max:10)
+        list_of_cited_by.append(choices(df["article_no"], k=choice(range(1, 10))))
 
-    df["cited_by"] = list_of_cited_by
+    # this line of code adds the generated citations into the cited_by column
+    # TODO: Adam needs to learn what the map function does and how this line works
+    # Pulled from here on stack overflow:
+    # https://stackoverflow.com/questions/45306988/column-of-lists-convert-list-to-string-as-a-new-column
+    df["cited_by"] = [','.join(map(str, l)) for l in list_of_cited_by]
     return df
 
 
-def extract_keyword_n_give_ids_to_them(df):
+def extract_keyword_and_set_keyword_id(df):
     """
-    This function extract all the unique keywords from the dataset and gives them all a unique ID.
+    This function extracts all the unique keywords from the dataset and gives them all a unique ID.
     :param pd.DataFrame df:
     :return: pd.DataFrame
     """
-    # splits string using '|' separator
+    # splits string using ';' separator
     keywords_list = []
     for keywords_str in df.index_keywords:
         try:
             if keywords_str is not np.nan:
-                keywords_list.extend( keywords_str.split('|') )
+                keywords_list.extend(keywords_str.split(';'))
         except Exception as err:
             print(f'error: {err}')
             print(keywords_str)
@@ -75,7 +109,7 @@ def extract_keyword_n_give_ids_to_them(df):
     kw_list: list[str] = []
     kw_list = []
     for kw in keywords_list:
-        kw_list.append( kw.strip().lower() )
+        kw_list.append(kw.strip().lower())
     unique_keywords_list = set(kw_list)
 
     df_kw = pd.DataFrame(unique_keywords_list, columns=["keyword"])
@@ -103,28 +137,31 @@ def maps_article_no_keyword_id(df, keywords_dict):
         kw_list = row.index_keywords.split('|')
         kw_list = [kw.strip() for kw in kw_list]
         for kw in kw_list:
-            print( keywords_dict[kw] )
+            print(keywords_dict[kw])
             list_of_references.append((row.article_no, keywords_dict[kw]))
 
     # Now we can create CSV
-    df_mapping = pd.DataFrame( list_of_references, columns=["article_no", "keyword_id"] )
+    df_mapping = pd.DataFrame(list_of_references, columns=["article_no", "keyword_id"])
     return df_mapping
+
 
 
 if __name__ == '__main__':
     df = pd.read_csv("../data/raw/scopusBYUEngr17_21.csv")
 
+    df = rename_dataset_variables(df)
     df = set_index_as_article_number(df)
     df = create_cited_by_column(df)
 
-    df = extract_keyword_n_give_ids_to_them(df)
-    df.to_csv(join(PROCESSED_DIR, "keywords.csv"), index=False)
+    df_kw = extract_keyword_and_set_keyword_id(df)
+    df_kw.to_csv(join(PROCESSED_DIR, "keywords.csv"), index=False)
 
     # we load that info in a dictionary
-    keywords_dict = dict(zip(df.keyword, df.keyword_id))
+    keywords_dict = dict(zip(df_kw.keyword, df_kw.keyword_id))
 
-    df = maps_article_no_keyword_id(df, keywords_dict)
+    # df = maps_article_no_keyword_id(df, keywords_dict)
 
-    df.to_csv(join(PROCESSED_DIR, "keyword_mapping.csv"), index=False )
+    df.to_csv(join(PROCESSED_DIR, "publications_processed.csv"), index=False)
 
-
+    # TODO: Remove this code below. Being used to load into local neo4j directory.
+    df.to_csv(join(ADAM_OUTPUT_PATH, "publications_processed.csv"), index=False)
