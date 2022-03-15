@@ -68,7 +68,7 @@ query_create_edges_from_paper_to_collection = '''
     )
     MERGE (p)-[:IN_COLLECTION]->(type)
     '''
-conn.query(query_create_edges_from_paper_to_collection, db='neo4j')
+#conn.query(query_create_edges_from_paper_to_collection, db='neo4j')
 
 # test query, delete later
 query_match_and_return_in_collection_nodes = '''
@@ -76,7 +76,7 @@ query_match_and_return_in_collection_nodes = '''
 MATCH (p:paper {article_no:18})-[e:IN_COLLECTION]->(collection:Proceeding)-[:IN_DATE]->(y:Year)
 RETURN p,collection,y
 '''
-conn.query(query_match_and_return_in_collection_nodes, db='neo4j')
+#conn.query(query_match_and_return_in_collection_nodes, db='neo4j')
 
 query_string_to_create_article_nodes = """
     LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/article.csv'
@@ -86,7 +86,7 @@ query_string_to_create_article_nodes = """
                        year: row.year })
     return *;
 """
-conn.query(query_string_to_create_article_nodes, db='neo4j')
+#conn.query(query_string_to_create_article_nodes, db='neo4j')
 
 query_to_create_keywords_nodes = """
     LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keywords.csv'
@@ -95,7 +95,7 @@ query_to_create_keywords_nodes = """
                        keyword_id:  toInteger(row.keyword_id) })
     return * ;
 """
-conn.query(query_to_create_keywords_nodes, db='neo4j')
+#conn.query(query_to_create_keywords_nodes, db='neo4j')
 
 #query_connect_article_to_keywords = """
 #LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keyword_mapping.csv'
