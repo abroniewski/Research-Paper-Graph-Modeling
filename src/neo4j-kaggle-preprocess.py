@@ -9,14 +9,18 @@ import pandas as pd
 from random import choice, choices
 import csv
 from os.path import join
+import configparser
 
 ##################################
 # Global Variable
 ##################################
 PROCESSED_DIR = "../data/processed/"
 OUTPUT_FILE_PATH = "../data/processed/kaggle_v2.csv"
-ADAM_OUTPUT_PATH = "/Users/adambroniewski/Library/Application Support/Neo4j Desktop/Application/relate-data/dbmss/dbms-d2865cee-b5fb-4536-bdc8-964b408bb3f8/import"
 
+config = configparser.RawConfigParser()
+config.read('local.config')
+details_dict = dict(config.items('PROJECT_DIR'))
+PROJECT_IMPORT_PATH = details_dict["dir_path"]
 
 ##################################
 # Pre-process Data
@@ -165,4 +169,4 @@ if __name__ == '__main__':
     df.to_csv(join(PROCESSED_DIR, "publications_processed.csv"), index=False)
 
     # TODO: Remove this code below. Being used to load into local neo4j directory.
-    df.to_csv(join(ADAM_OUTPUT_PATH, "publications_processed.csv"), index=False)
+    df.to_csv(join(PROJECT_IMPORT_PATH, "publications_processed.csv"), index=False)
