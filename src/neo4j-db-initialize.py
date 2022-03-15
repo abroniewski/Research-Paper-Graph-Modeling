@@ -24,6 +24,9 @@ query_create_author_and_papers_nodes = '''
     UNWIND split(row.authors, ',') AS author
     MERGE (a:author {name: author})
     MERGE (a)-[r:CONTRIBUTED]->(p)
+    WITH p, row
+    MERGE (type:Proceeding {name: row.source_title})
+    MERGE (p)-[:IN_COLLECTION]->(type)
     '''
 conn.query(query_create_author_and_papers_nodes, db='neo4j')
 
