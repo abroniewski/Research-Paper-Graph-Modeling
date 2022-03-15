@@ -18,10 +18,8 @@ OUTPUT_FILE_PATH = "../data/processed/kaggle_v2.csv"
 ADAM_OUTPUT_PATH = "/Users/adambroniewski/Library/Application Support/Neo4j Desktop/Application/relate-data/dbmss/dbms-d2865cee-b5fb-4536-bdc8-964b408bb3f8/import"
 
 
-# This python script is used to initialize the database and create all nodes and edges
-
 ##################################
-# Pre-process Columns
+# Pre-process Data
 ##################################
 
 def rename_dataset_variables(df):
@@ -47,8 +45,9 @@ def rename_dataset_variables(df):
     # TODO: HELP -> how exactly does the df.loc() function work?
     # df['conference_year'] = df.loc[(df['source_title'].str.match(r'(^[0-9]{4})'), 'source_title')]
     df = df.drop(['Page start', 'Page end', 'Page count', 'DOI', 'Link', 'Affiliations', 'Authors with affiliations',
-             'Abstract', 'Publication Stage', 'Access Type', 'Source', 'EID'], axis='columns')
+                  'Abstract', 'Publication Stage', 'Access Type', 'Source', 'EID'], axis='columns')
     return df
+
 
 def set_index_as_article_number(df):
     """
@@ -144,7 +143,9 @@ def maps_article_no_keyword_id(df, keywords_dict):
     df_mapping = pd.DataFrame(list_of_references, columns=["article_no", "keyword_id"])
     return df_mapping
 
-
+##################################
+# Main Program Run
+##################################
 
 if __name__ == '__main__':
     df = pd.read_csv("../data/raw/scopusBYUEngr17_21.csv")
