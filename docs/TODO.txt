@@ -2,8 +2,11 @@ Done: Change article to journal in column "document type paper"
 Done: change node "article" to paper
 Done: rename conference paper to proceeding
 Done: Create dummy data
-TODO: processing -> strip year from source_title into new column called conference year. @ismail -> Need some help to get the syntax write on this one.
-TODO: add all modifications to csv as code. Some of the columns for certain rows have slipped due to a missed comma or change.
+TODO: MAYBE NO - processing -> strip year from source_title into new column called conference year. @ismail -> Need some help to get the syntax write on this one.
+TODO: add all modifications to csv as code. Some columns for certain rows have slipped due to a missed comma or change.
 Done: Anna -> how to make use of communities in queries once found? (email sent)
 Done: Anna -> publishing year as own node between proceedings and journals?
 TODO: Question -> can a paper get published in conference AND journal?
+TODO: ADAM - Add index keywords nodes + edges
+TODO: ADAM - Add journal, proceeding, other to main script
+Done: cleaned up initialize file with local connection to push out processed csv
