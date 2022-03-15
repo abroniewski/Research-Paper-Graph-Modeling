@@ -93,6 +93,70 @@ query_string = '''
     RETURN p
     '''
 
+# Cypher Queries to create dummy values for proceeding and Journal
+'''
+MATCH (p:paper {article_no:0})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Advances in Intelligent Systems and Computing'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:1})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Lecture Notes in Electrical Engineering'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:2})
+MERGE (p)-[e:IN_COLLECTION]->(:Review {title:'Journal of Hydraulic Engineering'})-[:IN_DATE]->(
+:Year {year:2020});
+MATCH (p:paper {article_no:3})
+MERGE (p)-[e:IN_COLLECTION]->(:Journal {title:'Journal of Computing and Information Science in Engineering'})-[
+:IN_DATE]->(:Year {year:2020});
+MATCH (p:paper {article_no:4})
+MERGE (p)-[e:IN_COLLECTION]->(:Journal {title:'Telematics and Informatics'})-[:IN_DATE]->(
+:Year {year:2020});
+MATCH (p:paper {article_no:5})
+MERGE (p)-[e:IN_COLLECTION]->(:Journal {title:'Telematics and Informatics'})-[:IN_DATE]->(
+:Year {year:2020});
+MATCH (p:paper {article_no:6})
+MERGE (p)-[e:IN_COLLECTION]->(:Journal {title:'Telematics and Informatics'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:7})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Lecture Notes in Electrical Engineering'})-[:IN_DATE]->(
+:Year {year:2020});
+MATCH (p:paper {article_no:8})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Lecture Notes in Electrical Engineering'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:9})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'IEEE Robotics and Automation Letters'})-[:IN_DATE]->(
+:Year {year:2020});
+MATCH (p:paper {article_no:10})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'IEEE Robotics and Automation Letters'})-[:IN_DATE]->(
+:Year {year:2020});
+MATCH (p:paper {article_no:11})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Optical Fiber Technology'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:12})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Optical Fiber Technology'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:13})
+MERGE (p)-[e:IN_COLLECTION]->(:Journal {title:'Journal 1'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:14})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Proceeding A'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:15})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Proceeding A'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:16})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Optical Fiber Technology'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:17})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Optical Fiber Technology'})-[:IN_DATE]->(
+:Year {year:2021});
+MATCH (p:paper {article_no:18})
+MERGE (p)-[e:IN_COLLECTION]->(:Review {title:'Review A'})-[:IN_DATE]->(
+:Year {year:2020});
+MATCH (p:paper {article_no:19})
+MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Proceeding A'})-[:IN_DATE]->(
+:Year {year:2021});
+
+
 ### Articles and Journals (Ismail)
 ##################################################
 # Global Variables
