@@ -147,15 +147,22 @@ MATCH (p:paper {article_no:16})
 MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Optical Fiber Technology'})-[:IN_DATE]->(
 :Year {year:2021});
 MATCH (p:paper {article_no:17})
-MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Optical Fiber Technology'})-[:IN_DATE]->(
-:Year {year:2021});
-MATCH (p:paper {article_no:18})
-MERGE (p)-[e:IN_COLLECTION]->(:Review {title:'Review A'})-[:IN_DATE]->(
-:Year {year:2020});
-MATCH (p:paper {article_no:19})
-MERGE (p)-[e:IN_COLLECTION]->(:Proceeding {title:'Proceeding A'})-[:IN_DATE]->(
-:Year {year:2021});
+MERGE (p)-[e:IN_COLLECTION]->(collection:Proceeding {title:'Optical Fiber Technology'})
+WITH collection
+MERGE (collection)-[:IN_DATE]->(:Year {year:2021});
 
+MATCH (p:paper {article_no:18})
+MERGE (p)-[e:IN_COLLECTION]->(collection:Proceeding {title:'Proceeding A'})
+WITH collection
+MERGE (collection)-[:IN_DATE]->(:Year {year:2021});
+
+# Match and return nodes
+MATCH (p:paper {article_no:18})-[e:IN_COLLECTION]->(collection:Proceeding)-[:IN_DATE]->(y:Year)
+RETURN p,collection,y
+
+# Delete all IN_COLLECTION edges
+MATCH (p:Proceeding)-[:IN_DATE]->(y:Year) DETACH DELETE p,y;
+'''
 
 ### Articles and Journals (Ismail)
 ##################################################
