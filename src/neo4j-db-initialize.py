@@ -45,10 +45,10 @@ query_create_citations_edges = '''
 //   as a new object. So we need to do all of our MATCHES before our MERGE and then we can pull
 //   in the found objects using their aliases.
     LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
-    MATCH (p:paper {name: row.article})
+    MATCH (p:Paper {name: row.article})
     WITH p, row
     UNWIND split(row.cited_by, ',') AS cited_by
-    MATCH (p2:paper {article_no: toInteger(cited_by)})
+    MATCH (p2:Paper {article_no: toInteger(cited_by)})
     WITH p, p2
     MERGE (p)<-[r:CITED]-(p2)
     '''
