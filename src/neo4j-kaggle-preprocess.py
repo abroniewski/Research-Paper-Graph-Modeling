@@ -35,7 +35,7 @@ def rename_dataset_variables(df):
     """
     # rename columns to remove spaces, case and special characters
     df.rename(
-        columns={'Authors': 'authors', 'Author(s) ID': 'authors_id', 'Title': 'article', 'Year': 'publication_year',
+        columns={'Authors': 'authors', 'Author(s) ID': 'authors_id', 'Title': 'paper', 'Year': 'publication_year',
                  'Source title': 'source_title', 'Volume': 'volume', 'Issue': 'issue', 'Art. No.': 'article_no',
                  'Cited by': 'cited_by', 'Author Keywords': 'author_keywords', 'Index Keywords': 'index_keywords',
                  'Document Type': 'document_type'}, inplace=True)
