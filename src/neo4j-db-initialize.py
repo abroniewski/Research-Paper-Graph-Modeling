@@ -23,7 +23,7 @@ query_create_author_paper_collection_year = '''
     MERGE (collection:document_type {title:row.source_title, document_type:row.document_type})
     WITH y, collection, row
     MERGE (collection)-[:IN_YEAR]->(y)
-    MERGE (p:Paper {name: row.article, article_no: toInteger(row.article_no)})
+    MERGE (p:Paper {name: row.paper, article_no: toInteger(row.article_no)})
     MERGE (p)-[:PUBLISHED_IN]->(y)
     MERGE (p)-[e:IN_COLLECTION]->(collection)
     WITH p, row
