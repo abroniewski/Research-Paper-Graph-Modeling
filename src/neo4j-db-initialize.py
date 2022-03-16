@@ -17,16 +17,20 @@ query_create_author_and_papers_nodes = '''
 // Finally, we create an edge connecting each author to the current paper
 // NOTE: Using MERGE allows us to make sure we are not creating duplicate nodes for an author that has contributed
 //   to multiple papers.
+// LEARNING: We cannot create labels for nodes or edges dynamically
 
     LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
-    MERGE (p:paper {name: row.article, article_no: toInteger(row.article_no)})
+    MERGE (y:Year {year:row.publication_year})
+    MERGE (collection:document_type {title:row.source_title, document_type:row.document_type})
+    WITH y, collection, row
+    MERGE (collection)-[:IN_YEAR]->(y)
+    MERGE (p:Paper {name: row.article, article_no: toInteger(row.article_no)})
+    MERGE (p)-[:PUBLISHED_IN]->(y)
+    MERGE (p)-[e:IN_COLLECTION]->(collection)
     WITH p, row
     UNWIND split(row.authors, ',') AS author
-    MERGE (a:author {name: author})
+    MERGE (a:Author {name: author})
     MERGE (a)-[r:CONTRIBUTED]->(p)
-    WITH p, row
-    MERGE (type:Proceeding {name: row.source_title})
-    MERGE (p)-[:IN_COLLECTION]->(type)
     '''
 conn.query(query_create_author_and_papers_nodes, db='neo4j')
 
@@ -59,14 +63,23 @@ query_create_edges_from_paper_to_collection = '''
     FOREACH(ignoreMe IN CASE WHEN row.document_type = 'Proceeding' THEN [1] ELSE [] END | 
         MERGE (type:proceeding {name: row.source_title})
     )
-    FOREACH(ignoreMe IN CASE WHEN row.document_type = 'Journal' THEN [1] ELSE [] END | 
-    MERGE (p)-[:IN_COLLECTION]->(:journal {name: row.source_title})
-    )
-    FOREACH(ignoreMe IN CASE WHEN row.document_type <> 'Journal' OR row.document_type <> 'Proceeding' THEN [1] ELSE [] 
-    END | 
-    MERGE (p)-[:IN_COLLECTION]->(:other {name: row.source_title})
-    )
-    MERGE (p)-[:IN_COLLECTION]->(type)
+    
+    
+    LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
+    MERGE(y:Year {year:row.publication_year})
+    MERGE (collection:row.document_type {title:row.source_title})
+    WITH y, collection
+    MERGE (collection)-[:IN_YEAR]->(y)
+    MATCH (p:paper {article_no:row.article_no})
+    MERGE (p)-[e:IN_COLLECTION]->(collection)
+
+MATCH (p:paper {article_no:18})
+MERGE (collection:Proceeding {title:'Proceeding A'})
+MERGE (p)-[e:IN_COLLECTION]->(collection)
+WITH collection
+MERGE (y:Year {year:2021}) 
+MERGE (collection)-[:IN_DATE]->(y);
+
     '''
 #conn.query(query_create_edges_from_paper_to_collection, db='neo4j')
 
