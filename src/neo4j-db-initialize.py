@@ -67,11 +67,15 @@ SET n:Other
 REMOVE n:document_type
 REMOVE n.document_type
 '''
-
-#conn.query(query_set_document_type_index, db='neo4j')
+query_drop_document_type_index = '''
+// Removing index for no longer required document_type
+    DROP INDEX ON :document_type(document_type)
+'''
+conn.query(query_set_document_type_index, db='neo4j')
 conn.query(query_update_proceeding_node_labels, db='neo4j')
 conn.query(query_update_journal_node_labels, db='neo4j')
 conn.query(query_update_other_node_labels, db='neo4j')
+conn.query(query_drop_document_type_index, db='neo4j')
 
 query_create_citations_edges = '''
 // CREATE CITATIONS
