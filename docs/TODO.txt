@@ -17,3 +17,5 @@ Done: cleaned up initialize file with local connection to push out processed csv
 TODO: ISMAIL - Continue working on TOP 3 papers
 TODO: change article_no to paper_no
 Done: ADAM - document_type query is no longer cycling through all document types? There seems to be some leftover. Not sure why.
+TODO: use pre-processing on full data set
+TODO: run initialization on full data set
