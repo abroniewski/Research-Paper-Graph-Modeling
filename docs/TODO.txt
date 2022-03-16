@@ -3,14 +3,17 @@ Done: change node "article" to paper
 Done: rename conference paper to proceeding
 Done: Create dummy data
 TODO: processing -> strip year out of source_title to make consistent source nodes. MAYBE NO -> into new column called conference year. @ismail -> Need some help to get the syntax write on this one.
-TODO: change column headings "article"/"paper"
+Done: change column headings "article"/"paper"
 TODO: remove self-citing papers in chances function.
 TODO: add all modifications to csv as code. Some columns for certain rows have slipped due to a missed comma or change.
 Done: Anna -> how to make use of communities in queries once found? (email sent)
 Done: Anna -> publishing year as own node between proceedings and journals?
 Done: Question -> can a paper get published in conference AND journal?
-TODO: ADAM - Add index keywords nodes + edges
-TODO: ADAM - TOP PRIORITY: Finish dummy proceedings for Ismail
-TODO: ADAM - Add journal, proceeding, "other" to main script -> Go from tree trunk to leaf, start by matching on Proceeding/Journal than MATCH on paper. MATCH(p:row.doc_type)
+Done: ADAM - stripping whitespace from authors
+Done: ADAM - Add index keywords nodes + edges
+Done: ADAM - TOP PRIORITY: Finish dummy proceedings for Ismail
+Done: ADAM - Add journal, proceeding, "other" to main script -> Go from tree trunk to leaf, start by matching on Proceeding/Journal than MATCH on paper. MATCH(p:row.doc_type)
 Done: cleaned up initialize file with local connection to push out processed csv
 TODO: ISMAIL - Continue working on TOP 3 papers
+TODO: change article_no to paper_no
+Done: ADAM - document_type query is no longer cycling through all document types? There seems to be some leftover. Not sure why.
