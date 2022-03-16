@@ -10,13 +10,14 @@ conn.query(query_delete_all_existing_nodes, db='neo4j')
 query_create_author_paper_collection_year = '''
 // CREATE NODES FOR AUTHORS AND PAPERS + EDGES FOR CONTRIBUTION
 // This works by using LOAD CSV to connect to the locally available .csv in the default /import folder of neo4j
-// Using MERGE, we check to see is a node called "paper" already exsits. If so, we will add the info, if not
+// Using MERGE, we check to see is a node called "paper" already exists. If so, we will add the info, if not
 // we will create a new node
 // We then UNWIND the array of authors, and again use MERGE to create a node for each authoer (if it doesn't exist)
 // Finally, we create an edge connecting each author to the current paper
 // NOTE: Using MERGE allows us to make sure we are not creating duplicate nodes for an author that has contributed
 //   to multiple papers.
 // LEARNING: We cannot create labels for nodes or edges dynamically
+// LEARNING: trim() removes whitespace before and after
 
     LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
     MERGE (y:Year {year:row.publication_year})
@@ -28,7 +29,7 @@ query_create_author_paper_collection_year = '''
     MERGE (p)-[e:IN_COLLECTION]->(collection)
     WITH p, row
     UNWIND split(row.authors, ',') AS author
-    MERGE (a:Author {name: author})
+    MERGE (a:Author {name: trim(author)})
     MERGE (a)-[r:CONTRIBUTED]->(p)
     '''
 conn.query(query_create_author_paper_collection_year, db='neo4j')
@@ -97,14 +98,31 @@ query_create_citations_edges = '''
     '''
 conn.query(query_create_citations_edges, db='neo4j')
 
-query_to_create_keywords_nodes = """
-    LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keywords.csv'
-    AS row FIELDTERMINATOR ','
-    CREATE (k:Keyword {keyword: row.keyword,
-                       keyword_id:  toInteger(row.keyword_id) })
-    return * ;
-"""
-#conn.query(query_to_create_keywords_nodes, db='neo4j')
+query_to_create_keywords_from_index_nodes = '''
+// LEARNING: when matching on indexes, always add toInteger as CSV LOAD reads everything in as a string.
+
+    LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
+    WITH row
+    UNWIND split(row.index_keywords, ';') AS kw
+    MERGE (k:Keyword {keyword: trim(kw)})
+    WITH row, k
+    MATCH (p:Paper {article_no: toInteger(row.article_no)})
+    MERGE (p)-[r:TOPIC]->(k)
+    '''
+conn.query(query_to_create_keywords_from_index_nodes, db='neo4j')
+
+query_to_create_keywords_from_author_nodes = '''
+// LEARNING: when matching on indexes, always add toInteger as CSV LOAD reads everything in as a string.
+
+    LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
+    WITH row
+    UNWIND split(row.author_keywords, ';') AS aw
+    MERGE (k:Keyword {keyword: trim(aw)})
+    WITH row, k
+    MATCH (p:Paper {article_no: toInteger(row.article_no)})
+    MERGE (p)-[r:TOPIC]->(k)
+    '''
+conn.query(query_to_create_keywords_from_author_nodes, db='neo4j')
 
 #query_connect_article_to_keywords = """
 #LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keyword_mapping.csv'
