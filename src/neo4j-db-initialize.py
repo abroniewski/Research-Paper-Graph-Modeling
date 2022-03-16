@@ -5,10 +5,9 @@ conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
 query_delete_all_existing_nodes = '''
     MATCH (n) DETACH DELETE n
 '''
+conn.query(query_delete_all_existing_nodes, db='neo4j')
 
-# TODO: remove the first MATCH DELETE statement, or leave it in if we are starting with this initialization first.
-
-query_create_author_and_papers_nodes = '''
+query_create_author_paper_collection_year = '''
 // CREATE NODES FOR AUTHORS AND PAPERS + EDGES FOR CONTRIBUTION
 // This works by using LOAD CSV to connect to the locally available .csv in the default /import folder of neo4j
 // Using MERGE, we check to see is a node called "paper" already exsits. If so, we will add the info, if not
@@ -32,7 +31,47 @@ query_create_author_and_papers_nodes = '''
     MERGE (a:Author {name: author})
     MERGE (a)-[r:CONTRIBUTED]->(p)
     '''
-conn.query(query_create_author_and_papers_nodes, db='neo4j')
+conn.query(query_create_author_paper_collection_year, db='neo4j')
+
+# To have the correct names for Proceeding and Journal nodes, we will use the previously
+# created node properties to set the label. This can be done easily with a few queries
+# because we have a small set of collection types. We start by setting an index on the
+# property "document_type" to improve performance as we will be cycling through properties
+# instead of nodes and relations. We then SET the node label for each type of collection we
+# have, and REMOVE the previous label and temporary "document_type" property.
+query_set_document_type_index = '''
+// We will need to cycle through all of the document_type nodes we created to pull the attribute 
+// document_type out of the node and label the node with it. 
+// We start by creating an INDEX on that property cycling through properties instead of taking 
+// advantage of graph database ability to move through relationships is expensive.
+
+CREATE INDEX ON :document_type(document_type)
+'''
+query_update_proceeding_node_labels = '''
+MATCH (n:document_type {document_type:'Proceeding'})
+SET n:Proceeding
+REMOVE n:document_type
+REMOVE n.document_type
+'''
+query_update_journal_node_labels = '''
+MATCH (n:document_type {document_type:'Journal'})
+SET n:Journal
+REMOVE n:document_type
+REMOVE n.document_type
+'''
+query_update_other_node_labels = '''
+// Because this is the last node relabelling query being called, the only remaining nodes with this label
+// are those that have not already been renamed. These ones will all be named "Other".
+MATCH (n:document_type)
+SET n:Other
+REMOVE n:document_type
+REMOVE n.document_type
+'''
+
+#conn.query(query_set_document_type_index, db='neo4j')
+conn.query(query_update_proceeding_node_labels, db='neo4j')
+conn.query(query_update_journal_node_labels, db='neo4j')
+conn.query(query_update_other_node_labels, db='neo4j')
 
 query_create_citations_edges = '''
 // CREATE CITATIONS
@@ -53,53 +92,6 @@ query_create_citations_edges = '''
     MERGE (p)<-[r:CITED]-(p2)
     '''
 conn.query(query_create_citations_edges, db='neo4j')
-
-# TODO: Figure out how to add node connection from paper to journal or proceeding based on type. Was using FOREACH
-#  syntax, case would not work...
-query_create_edges_from_paper_to_collection = '''
-// CREATE PROCEEDINGS
-    LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
-    MATCH (p:paper {name: row.article})
-    FOREACH(ignoreMe IN CASE WHEN row.document_type = 'Proceeding' THEN [1] ELSE [] END | 
-        MERGE (type:proceeding {name: row.source_title})
-    )
-    
-    
-    LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
-    MERGE(y:Year {year:row.publication_year})
-    MERGE (collection:row.document_type {title:row.source_title})
-    WITH y, collection
-    MERGE (collection)-[:IN_YEAR]->(y)
-    MATCH (p:paper {article_no:row.article_no})
-    MERGE (p)-[e:IN_COLLECTION]->(collection)
-
-MATCH (p:paper {article_no:18})
-MERGE (collection:Proceeding {title:'Proceeding A'})
-MERGE (p)-[e:IN_COLLECTION]->(collection)
-WITH collection
-MERGE (y:Year {year:2021}) 
-MERGE (collection)-[:IN_DATE]->(y);
-
-    '''
-#conn.query(query_create_edges_from_paper_to_collection, db='neo4j')
-
-# test query, delete later
-query_match_and_return_in_collection_nodes = '''
-// Match and return nodes
-MATCH (p:paper {article_no:18})-[e:IN_COLLECTION]->(collection:Proceeding)-[:IN_DATE]->(y:Year)
-RETURN p,collection,y
-'''
-#conn.query(query_match_and_return_in_collection_nodes, db='neo4j')
-
-query_string_to_create_article_nodes = """
-    LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/article.csv'
-    AS row FIELDTERMINATOR ','
-    CREATE (a:Article {article_no: toInteger(row.article_no),
-                       title: row.title,
-                       year: row.year })
-    return *;
-"""
-#conn.query(query_string_to_create_article_nodes, db='neo4j')
 
 query_to_create_keywords_nodes = """
     LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keywords.csv'
