@@ -25,7 +25,10 @@ PROJECT_IMPORT_PATH = details_dict["dir_path"]
 def create_publication_review(df):
     """
     Creates a list of dummy data for reviews of a publication based
-    on the length of the input dataframe
+    on the length of the input dataframe. Because it is dummy data,
+    it is not semantically correct. The reviewers are not chosen from
+    the same pubication as that of the submitted journal, and there is
+    a potential for a reviewer to be the author that wrote the paper.
 
     :param pd.DataFrame df:
     :return: pd.DataFrame
@@ -36,13 +39,13 @@ def create_publication_review(df):
     for i in range(len(df)):
         reviews = []
         decision = []
-        for h in range(choice([1, 3, 5])):
-            reviews.append("This is a review of the paper. It was a great read!")
-            decision.append("approved")
+        for h in range(3):
+            reviews.append(f"This is review #{h+1} of the paper. It was a great read!")
+            decision.append(f"reviewer #{h+1} has approved")
         list_of_reviews.append(reviews)
         list_of_decisions.append(decision)
     df["reviews"] = [','.join(map(str, l)) for l in list_of_reviews]
-    df["decision"] = [','.join(map(str, l)) for l in list_of_decisions]
+    df["decisions"] = [','.join(map(str, l)) for l in list_of_decisions]
     return df
 
 
