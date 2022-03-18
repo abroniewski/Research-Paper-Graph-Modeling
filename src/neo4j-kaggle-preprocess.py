@@ -21,6 +21,7 @@ PROJECT_IMPORT_PATH = details_dict["dir_path"]
 # Pre-process Data
 ##################################
 
+
 def rename_dataset_variables(df):
     """
     Rename article to journal in column "document type"
@@ -41,6 +42,36 @@ def rename_dataset_variables(df):
     return df
 
 
+def create_review_group(df):
+    """
+    Creates a list of dummy data for reviews of a publication based
+    on the length of the input dataframe. Because it is dummy data,
+    it is not semantically correct. The reviewers are not chosen from
+    the same publication as that of the submitted journal, and there is
+    a potential for a reviewer to be the author that wrote the paper.
+    The review group is set to a unique id, in this case it is just
+    copying the paper ID.
+
+    :param pd.DataFrame df:
+    :return: pd.DataFrame
+
+    """
+    list_of_reviewers = []
+    list_of_reviewers_id = []
+    for i in range(len(df)):
+        reviewers = []
+        reviewer_id = []
+        for h in range(3):
+            random_reviewer = choice(range(len(df)))
+            reviewers.append(df["authors"][random_reviewer].split(', ')[0])
+            reviewer_id.append(df["authors_id"][random_reviewer].split(';')[0])
+        list_of_reviewers.append(reviewers)
+        list_of_reviewers_id.append(reviewer_id)
+    df["reviewers"] = [','.join(map(str, l)) for l in list_of_reviewers]
+    df["reviewers_id"] = [','.join(map(str, l)) for l in list_of_reviewers_id]
+    return df
+
+
 def set_index_as_article_number(df):
     """
     :param pd.DataFrame df:
@@ -51,6 +82,7 @@ def set_index_as_article_number(df):
     # We want to rename the index column, but since that is difficult (cuz I no want to Google)
     # we are copying index col to create a new article_no col
     df["article_no"] = df["index"]
+    df["review_group"] = df["index"]
     # Now we need to drop this index named col
     df = df.drop("index", axis=1)
     return df
@@ -153,6 +185,7 @@ if __name__ == '__main__':
     df = pd.read_csv(get_user_input_for_test_run())
 
     df = rename_dataset_variables(df)
+    df = create_review_group(df)
     df = set_index_as_article_number(df)
     df = create_cited_by_column(df)
 
