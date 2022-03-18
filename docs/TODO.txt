@@ -17,5 +17,9 @@ Done: cleaned up initialize file with local connection to push out processed csv
 TODO: ISMAIL - Continue working on TOP 3 papers
 TODO: change article_no to paper_no
 Done: ADAM - document_type query is no longer cycling through all document types? There seems to be some leftover. Not sure why.
-TODO: use pre-processing on full data set
-TODO: run initialization on full data set
+Done: use pre-processing on full data set
+Done: run initialization on full data set
+Done: create dummy reviewer list + reviewer group to initial data set
+Done: Create evolution dummy data
+Done: Update initial load with review groups needed for evolution
+TODO: ADAM - initialize evolution data. Use new method to pass mutliple array parameters in at the same time.
