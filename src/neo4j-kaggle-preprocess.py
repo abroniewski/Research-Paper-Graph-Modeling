@@ -1,13 +1,7 @@
-from typing import List, Any
 
 import numpy as np
-from neo4j import GraphDatabase
-import logging
-import sys
-from neo4j.exceptions import ServiceUnavailable
 import pandas as pd
 from random import choice, choices
-import csv
 from os.path import join
 import configparser
 
@@ -17,6 +11,7 @@ import configparser
 PROCESSED_DIR = "../data/processed/"
 OUTPUT_FILE_PATH = "../data/processed/kaggle_v2.csv"
 
+# Here we add a local project import directory specific to each local neo4j instance
 config = configparser.RawConfigParser()
 config.read('local.config')
 details_dict = dict(config.items('PROJECT_DIR'))
@@ -41,13 +36,6 @@ def rename_dataset_variables(df):
                  'Document Type': 'document_type'}, inplace=True)
     df.loc[(df['document_type'] == "Article", 'document_type')] = "Journal"
     df.loc[(df['document_type'] == "Conference Paper", 'document_type')] = "Proceeding"
-    # use regex to find all conference names that start with {4} numbers [0-9]. For .match(), you include
-    # a regex parameter inside r'()'
-    df.loc[(df['source_title'].isna(), 'source_title')] = "TEMP"  # TODO: remove this line after cleaning up CSV. This
-    # is only included to test the line below.
-    # TODO: HELP -> how to just return the year from the conference name instead of entire title.
-    # TODO: HELP -> how exactly does the df.loc() function work?
-    # df['conference_year'] = df.loc[(df['source_title'].str.match(r'(^[0-9]{4})'), 'source_title')]
     df = df.drop(['Page start', 'Page end', 'Page count', 'DOI', 'Link', 'Affiliations', 'Authors with affiliations',
                   'Abstract', 'Publication Stage', 'Access Type', 'Source', 'EID'], axis='columns')
     return df
@@ -147,12 +135,22 @@ def maps_article_no_keyword_id(df, keywords_dict):
     df_mapping = pd.DataFrame(list_of_references, columns=["article_no", "keyword_id"])
     return df_mapping
 
+
+def get_user_input_for_test_run():
+    user_input = input("Do you want to create test data? (y/n)")
+    if user_input == "y":
+        input_csv = "../data/raw/scopusBYUEngr17_21.csv"
+    else:
+        input_csv = "../data/raw/scopusBYUEngr17_21-unedited.csv"
+    return input_csv
+
+
 ##################################
 # Main Program Run
 ##################################
 
 if __name__ == '__main__':
-    df = pd.read_csv("../data/raw/scopusBYUEngr17_21.csv")
+    df = pd.read_csv(get_user_input_for_test_run())
 
     df = rename_dataset_variables(df)
     df = set_index_as_article_number(df)
