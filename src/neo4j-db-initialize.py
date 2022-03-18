@@ -18,6 +18,9 @@ query_create_author_paper_collection_year = '''
 //   to multiple papers.
 // LEARNING: We cannot create labels for nodes or edges dynamically
 // LEARNING: trim() removes whitespace before and after
+// LEARNING: NEVER FORGET!!! You should be creating csv files for your nodes and your edges. Using pure CYPHER for
+// your loading is like using SQL on something that Python can to simply. It's not worth it.... Here we needed
+// to deal with multiple UNWINDs, resulting in CYPHER challenges we would not have encountered working in Python.
 
     LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
     MERGE (y:Year {year:row.publication_year})
@@ -27,12 +30,24 @@ query_create_author_paper_collection_year = '''
     MERGE (p:Paper {name: row.paper, article_no: toInteger(row.article_no)})
     MERGE (p)-[:PUBLISHED_IN]->(y)
     MERGE (p)-[e:IN_COLLECTION]->(collection)
+    MERGE (rg:ReviewGroup {group_id: toInteger(row.review_group)})
+    MERGE (p)-[:REVIEWED_BY]->(rg)
     WITH p, row
     UNWIND split(row.authors, ',') AS author
     MERGE (a:Author {name: trim(author)})
     MERGE (a)-[r:CONTRIBUTED]->(p)
     '''
 conn.query(query_create_author_paper_collection_year, db='neo4j')
+
+query_add_peer_review_group_authors = '''
+    LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
+    MATCH (rg:ReviewGroup {group_id: toInteger(row.review_group)})
+    WITH row, rg
+    UNWIND split(row.reviewers, ',') AS reviewer
+    MATCH (a:Author {name: trim(reviewer)})
+    CREATE (a)-[:IN_REVIEW_GROUP]->(rg)
+'''
+conn.query(query_add_peer_review_group_authors, db='neo4j')
 
 # To have the correct names for Proceeding and Journal nodes, we will use the previously
 # created node properties to set the label. This can be done easily with a few queries
