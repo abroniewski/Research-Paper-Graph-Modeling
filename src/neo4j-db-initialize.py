@@ -98,6 +98,8 @@ query_create_citations_edges = '''
     '''
 conn.query(query_create_citations_edges, db='neo4j')
 
+#TODO: This keyword long is expensive. Can it be made faster by using a keyword index and matching on the index
+# instead of on the string?
 query_to_create_keywords_from_index_nodes = '''
 // LEARNING: when matching on indexes, always add toInteger as CSV LOAD reads everything in as a string.
 
@@ -122,14 +124,4 @@ query_to_create_keywords_from_author_nodes = '''
     MATCH (p:Paper {article_no: toInteger(row.article_no)})
     MERGE (p)-[r:TOPIC]->(k)
     '''
-conn.query(query_to_create_keywords_from_author_nodes, db='neo4j')
-
-#query_connect_article_to_keywords = """
-#LOAD CSV WITH HEADERS FROM 'http://localhost:11001/project-2aaa90a6-9ff2-437b-960f-e170f1a570de/keyword_mapping.csv'
-#AS row FIELDTERMINATOR ','
-#MATCH (a:Article {article_no: toInteger(row.article_no)} )
-#MATCH (k:Keyword {keyword_id: toInteger(row.keyword_id)})
-#CREATE (a)-[:has_keyword]->(k)
-#RETURN a, k;
-#"""
-#conn.query(query_connect_article_to_keywords, db='neo4j')
+#conn.query(query_to_create_keywords_from_author_nodes, db='neo4j')
