@@ -14,7 +14,7 @@ Done: ADAM - Add index keywords nodes + edges
 Done: ADAM - TOP PRIORITY: Finish dummy proceedings for Ismail
 Done: ADAM - Add journal, proceeding, "other" to main script -> Go from tree trunk to leaf, start by matching on Proceeding/Journal than MATCH on paper. MATCH(p:row.doc_type)
 Done: cleaned up initialize file with local connection to push out processed csv
-TODO: ISMAIL - Continue working on TOP 3 papers
+Done: ISMAIL - Continue working on TOP 3 papers
 TODO: change article_no to paper_no
 Done: ADAM - document_type query is no longer cycling through all document types? There seems to be some leftover. Not sure why.
 Done: use pre-processing on full data set
@@ -22,4 +22,7 @@ Done: run initialization on full data set
 Done: create dummy reviewer list + reviewer group to initial data set
 Done: Create evolution dummy data
 Done: Update initial load with review groups needed for evolution
-TODO: ADAM - initialize evolution data. Use new method to pass mutliple array parameters in at the same time.
+TODO: ADAM - initialize evolution data. Use new method to pass multiple array parameters in at the same time.
+TODO: Update Architecture design with current model
+TODO: Explore data using Algorithsm
+TODO: Complete Recommender work -> generate communities
