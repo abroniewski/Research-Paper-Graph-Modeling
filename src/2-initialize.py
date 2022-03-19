@@ -1,4 +1,8 @@
 from utils import Neo4jConnection
+import time
+
+tic = time.perf_counter()
+
 
 conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
 
@@ -140,3 +144,6 @@ query_to_create_keywords_from_author_nodes = '''
     MERGE (p)-[r:TOPIC]->(k)
     '''
 #conn.query(query_to_create_keywords_from_author_nodes, db='neo4j')
+
+toc = time.perf_counter()
+print(f"Total time for initial load was: {toc - tic:0.4f} seconds")
