@@ -34,7 +34,7 @@ def create_author_paper_collection_year():
     // to deal with multiple UNWINDs, resulting in CYPHER challenges we would not have encountered working in Python.
     
     LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
-    MERGE (y:Year {year:row.publication_year})
+    MERGE (y:Year {year: toInteger(row.publication_year)})
     MERGE (collection:document_type {title:row.source_title, document_type:row.document_type})
     WITH y, collection, row
     MERGE (collection)-[:IN_YEAR]->(y)
