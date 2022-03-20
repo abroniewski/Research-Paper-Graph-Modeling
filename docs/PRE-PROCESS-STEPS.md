@@ -29,6 +29,17 @@ A unique index was created for each paper. There were ~500 missing indexes, so t
 The following heading each corresponds to a different entity in the database. We document here the attributes and the 
 relationship ids for each.
 
+### D Recommender
+We are using keywords for a community:
+- Design
+- Product design
+- Computer aided design
+- Surveys
+- Humans
+- Friction stir welding
+- Machine design
+
+
 ### Article Nodes
 it will have these attributes:
 - article_no

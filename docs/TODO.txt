@@ -29,3 +29,6 @@ TODO: Update Architecture design with current model
 TODO: Explore data using Algorithm
 TODO: Complete Recommender work -> generate communities
 TODO: Check why there are so many authors with missing affiliations after evolution. Is it a trim() issue?
+
+
+--- Ismail Section

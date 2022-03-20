@@ -156,7 +156,7 @@ def create_keywords_from_index_nodes():
         LOAD CSV WITH HEADERS FROM 'file:///publications_processed.csv' AS row FIELDTERMINATOR ','
         WITH row
         UNWIND split(row.index_keywords, ';') AS kw
-        MERGE (k:Keyword {keyword: trim(kw)})
+        MERGE (k:Keyword {keyword: toLower( trim(kw) )})
         WITH row, k
         MATCH (p:Paper {article_no: toInteger(row.article_no)})
         MERGE (p)-[r:TOPIC]->(k)
