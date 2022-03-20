@@ -1,4 +1,4 @@
-Query 1
+Query 1 - Top 3 cited papers
 
 MATCH ()-[r:CITED]->(p:Paper)-[:IN_COLLECTION]->(pro:Proceeding)
 WITH pro, p, count(r) as cite_num
@@ -6,7 +6,7 @@ WITH pro, p, cite_num ORDER BY cite_num DESC
 RETURN pro, collect(p)[0..3], collect( cite_num)[0..3]
 ---
 
-Query 2
+Query 2 - Community
 
 MATCH (a:Author)-[:CONTRIBUTED]->(p:Paper)-[in_col:IN_COLLECTION]->(pro:Proceeding),
               (p)-[pub_in:PUBLISHED_IN]->(y:Year)
@@ -67,7 +67,7 @@ YIELD communityCount, modularity, modularities
 CALL db.schema.visualization
 This query allows you to see schema of the graph.
 
---- Data for testing CASE
+Data for testing CASE
 MERGE (a:Person {name: "Alice", age: 38, eyes: "brown"})
 MERGE (b:Person {name: "bob", age: 25, eyes: "blue"})
 MERGE (c:Person {name: "Charlie", age: 53, eyes: "Green"})
