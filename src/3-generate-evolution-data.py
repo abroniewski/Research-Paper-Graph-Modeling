@@ -1,9 +1,6 @@
-import numpy as np
 import pandas as pd
-from random import choice, choices
 from os.path import join
 import configparser
-import requests
 
 ##################################
 # Global Variable
