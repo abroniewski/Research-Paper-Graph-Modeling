@@ -23,8 +23,9 @@ Done: create dummy reviewer list + reviewer group to initial data set
 Done: Create evolution dummy data
 Done: Update initial load with review groups needed for evolution
 Done: ADAM - initialize evolution data. Use new method to pass multiple array parameters in at the same time.
-TODO: ADAM - Add author affiliation cypher query
-TODO: ADAM - Add author affiliation in pre-process data
+Done: ADAM - Add author affiliation cypher query
+Done: ADAM - Add author affiliation in pre-process data
 TODO: Update Architecture design with current model
 TODO: Explore data using Algorithm
 TODO: Complete Recommender work -> generate communities
+TODO: Check why there are so many authors with missing affiliations after evolution. Is it a trim() issue?
