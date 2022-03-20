@@ -3,7 +3,7 @@ Query 1 - Top 3 cited papers
 MATCH ()-[r:CITED]->(p:Paper)-[:IN_COLLECTION]->(pro:Proceeding)
 WITH pro, p, count(r) as cite_num
 WITH pro, p, cite_num ORDER BY cite_num DESC
-RETURN pro, collect(p)[0..3], collect( cite_num)[0..3]
+RETURN pro, collect(p)[0..3], collect(cite_num)[0..3]
 ---
 
 Query 2 - Community
@@ -18,7 +18,30 @@ RETURN  a, pro, tot_pubs
 
 Query 3 - Impact Factor
 
+MATCH ()-[cite:CITED]->(p0:Paper)-[:IN_COLLECTION]->(jnl:Journal)-[:IN_YEAR]-(y0:Year)
+MATCH (p0)-[:PUBLISHED_IN]->(y0)
+WITH jnl, y0, count(cite) as cite_num
 
+MATCH (p1:Paper)-[:IN_COLLECTION]->(jnl)
+MATCH (p1)-[pub1:PUBLISHED_IN]->(y1:Year)
+    WHERE y1.year = y0.year - 1
+WITH jnl, y0, cite_num, y1, count(pub1) AS pub_num1
+
+MATCH (p2:Paper)-[:IN_COLLECTION]->(jnl)
+MATCH (p2)-[pub2:PUBLISHED_IN]->(y2)
+    WHERE y2.year = y0.year - 2
+WITH jnl, y0, y1, y2, cite_num, pub_num1, count(pub2) AS pub_num2
+
+RETURN jnl AS Journal, y0 AS ImpactFactorYear, cite_num/(pub_num1+pub_num2) AS ImpactFactor
+
+
+For each journal
+    For each year
+        If exists year-2
+            Count citations for Journal from this year AS cite
+            Count publications from year-1 AS pub1
+            Count publication from year-2 AS pub2
+            Calculate cite/(pub1+pub2)
 
 
 ----
