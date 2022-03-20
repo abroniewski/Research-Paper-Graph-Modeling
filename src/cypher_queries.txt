@@ -26,6 +26,16 @@ WITH  a, [x IN range(1,size(list_cited)) where x<=list_cited[x-1]| [list_cited[x
 WITH a, h_index_list[-1][1] as h_index
 RETURN a, h_index ORDER BY h_index DESC
 
+- Query 3-v2 Citations now sorted
+MATCH ()-[c:CITED]->(p:Paper),
+      (a:Author)-[:CONTRIBUTED]->(p)
+WITH  a, p, count(c) AS total_cited
+WITH  a, p, total_cited ORDER BY total_cited DESC
+WITH  a, count(p) AS papers, collect(total_cited) AS list_cited
+WITH  a,papers, list_cited, [x IN range(1,size(list_cited)) where x<=list_cited[x-1] | [list_cited[x-1],x] ] as h_index_list
+
+RETURN a, papers, list_cited, h_index_list, h_index_list[-1][1] as h_index
+
 --- Good Helper Queries
 
 CALL db.schema.visualization
