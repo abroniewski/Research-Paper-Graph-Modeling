@@ -15,6 +15,7 @@ WHERE tot_pubs > 3
 RETURN  a, pro, tot_pubs
 
 ---
+// To calculate impact factor, we will count the number of citations in a paper that was published in year0. Year0 will be pipelined down to the next match to count the number of publications in each journal in Year0-1, and then again in Year0-2. These values are used to finally calculate impact factor. Any journal and year combinations where a year0, year1, and year2 combaination do not exist are automatically disqualified from being calculated as a match will not exist. So the RETURN will only provide values where there were publications and citations in all years.
 
 Query 3 - Impact Factor
 
@@ -34,14 +35,6 @@ WITH jnl, y0, y1, y2, cite_num, pub_num1, count(pub2) AS pub_num2
 
 RETURN jnl AS Journal, y0 AS ImpactFactorYear, cite_num/(pub_num1+pub_num2) AS ImpactFactor
 
-
-For each journal
-    For each year
-        If exists year-2
-            Count citations for Journal from this year AS cite
-            Count publications from year-1 AS pub1
-            Count publication from year-2 AS pub2
-            Calculate cite/(pub1+pub2)
 
 
 ----
