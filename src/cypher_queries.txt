@@ -15,7 +15,7 @@ WHERE tot_pubs > 3
 RETURN  a, pro, tot_pubs
 ---
 
-Query 3
+Query 4
 
 MATCH ()-[c:CITED]->(p:Paper),
       (a:Author)-[:CONTRIBUTED]->(p)
@@ -35,13 +35,39 @@ WITH  a, count(p) AS papers, collect(total_cited) AS list_cited
 WITH  a,papers, list_cited, [x IN range(1,size(list_cited)) where x<=list_cited[x-1] | [list_cited[x-1],x] ] as h_index_list
 
 RETURN a, papers, list_cited, h_index_list, h_index_list[-1][1] as h_index
+ref: https://iprapas.github.io/posts/neo4j-recommender/
+
+--- Queries for C Graph Algorithms
+-- Louvain ref: https://neo4j.com/docs/graph-data-science/1.8/algorithms/louvain/
+- Create in-memory graph and store it in the graph catalog
+CALL gds.graph.create('yoGraph',
+    'Author',
+    {
+        CONTRIBUTED: {
+            orientation: 'UNDIRECTED'
+        }
+    }
+)
+
+- Stream Results
+CALL gds.louvain.stream('yoGraph')
+YIELD nodeId, communityId, intermediateCommunityIds
+RETURN gds.util.asNode(nodeId).name AS name, communityId, intermediateCommunityIds
+ORDER BY name ASC
+
+- Write results in the Node as property community
+CALL gds.louvain.write('yoGraph',
+{
+    writeProperty: 'community',
+})
+YIELD communityCount, modularity, modularities
 
 --- Good Helper Queries
 
 CALL db.schema.visualization
 This query allows you to see schema of the graph.
 
-Data for testing CASE
+--- Data for testing CASE
 MERGE (a:Person {name: "Alice", age: 38, eyes: "brown"})
 MERGE (b:Person {name: "bob", age: 25, eyes: "blue"})
 MERGE (c:Person {name: "Charlie", age: 53, eyes: "Green"})
