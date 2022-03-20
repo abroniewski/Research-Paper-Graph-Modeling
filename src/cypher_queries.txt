@@ -13,9 +13,17 @@ MATCH (a:Author)-[:CONTRIBUTED]->(p:Paper)-[in_col:IN_COLLECTION]->(pro:Proceedi
 WITH  a, pro, count(pub_in) as tot_pubs
 WHERE tot_pubs > 3
 RETURN  a, pro, tot_pubs
+
 ---
 
-Query 4
+Query 3 - Impact Factor
+
+
+
+
+----
+
+Query 4 - H-index
 
 MATCH ()-[c:CITED]->(p:Paper),
       (a:Author)-[:CONTRIBUTED]->(p)
@@ -26,7 +34,7 @@ WITH  a, [x IN range(1,size(list_cited)) where x<=list_cited[x-1]| [list_cited[x
 WITH a, h_index_list[-1][1] as h_index
 RETURN a, h_index ORDER BY h_index DESC
 
-- Query 3-v2 Citations now sorted
+- Query 4-v2 H-index with citations sorted
 MATCH ()-[c:CITED]->(p:Paper),
       (a:Author)-[:CONTRIBUTED]->(p)
 WITH  a, p, count(c) AS total_cited
