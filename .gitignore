@@ -4,4 +4,5 @@
 .nosync
 dblp.dtd
 dblp.xml
+.lock
 *.config
