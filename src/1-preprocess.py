@@ -34,10 +34,11 @@ def rename_dataset_variables(df):
         columns={'Authors': 'authors', 'Author(s) ID': 'authors_id', 'Title': 'paper', 'Year': 'publication_year',
                  'Source title': 'source_title', 'Volume': 'volume', 'Issue': 'issue', 'Art. No.': 'article_no',
                  'Cited by': 'cited_by', 'Author Keywords': 'author_keywords', 'Index Keywords': 'index_keywords',
-                 'Document Type': 'document_type'}, inplace=True)
+                 'Document Type': 'document_type', 'Authors with affiliations': 'authors_with_affiliations'},
+        inplace=True)
     df.loc[(df['document_type'] == "Article", 'document_type')] = "Journal"
     df.loc[(df['document_type'] == "Conference Paper", 'document_type')] = "Proceeding"
-    df = df.drop(['Page start', 'Page end', 'Page count', 'DOI', 'Link', 'Affiliations', 'Authors with affiliations',
+    df = df.drop(['Page start', 'Page end', 'Page count', 'DOI', 'Link', 'Affiliations',
                   'Abstract', 'Publication Stage', 'Access Type', 'Source', 'EID'], axis='columns')
     return df
 
