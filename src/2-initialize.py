@@ -178,6 +178,7 @@ if __name__ == '__main__':
     create_author_paper_collection_year()
     add_peer_review_group_authors()
     update_document_type_node_labels()
+    create_citations_edges()
     create_keywords_from_index_nodes()
 
     main_toc = time.perf_counter()
