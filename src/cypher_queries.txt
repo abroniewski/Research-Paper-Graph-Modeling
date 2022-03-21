@@ -105,7 +105,7 @@ WITH j, k, in_col
 MATCH (k)-[]-(p:Paper)-[]-(jj:Journal {title: "Journal of Mechanical Design, Transactions of the ASME"})
 RETURN jj, p, k, j, count(in_col) AS tot_papers
 
-# TODO Discuss with Adam
+# TODO Discuss with Adam (match on community = 1)
 MATCH (k:Keyword )
 WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
                     'machine design']

@@ -2,7 +2,8 @@
 Convert a DBLP (Computer Science Bibliography) XML file to CSV format.
 
 ## Data Source
-Data being used is the BYU Engineering Publications in Scopus 2017-2021. The dataset is available [on kaggle here](https://www.kaggle.com/dpixton/byu-engineering-publications-in-scopus-201721/version/1)
+Data being used is the BYU Engineering Publications in Scopus 2017-2021. The dataset is available 
+[on kaggle here](https://www.kaggle.com/dpixton/byu-engineering-publications-in-scopus-201721/version/1)
 
 ## Notes on loading data to neo4j
 
