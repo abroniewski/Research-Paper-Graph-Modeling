@@ -86,6 +86,39 @@ CALL gds.louvain.write('yoGraph',
 })
 YIELD communityCount, modularity, modularities
 
+
+--- D Recommender
+- Define Research Community
+MATCH (k:Keyword )
+WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
+                    'machine design']
+SET k.community = 1
+RETURN k
+
+- Find Journals part of the community
+MATCH (k:Keyword )
+WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
+                    'machine design']
+
+MATCH (j:Journal {title: "Journal of Mechanical Design, Transactions of the ASME"})<-[in_col:IN_COLLECTION]-()
+WITH j, k, in_col
+MATCH (k)-[]-(p:Paper)-[]-(jj:Journal {title: "Journal of Mechanical Design, Transactions of the ASME"})
+RETURN jj, p, k, j, count(in_col) AS tot_papers
+
+# TODO Discuss with Adam
+MATCH (k:Keyword )
+WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
+                    'machine design']
+
+MATCH (j:Journal )<-[in_col:IN_COLLECTION]-()
+
+WITH j, k, count(in_col) AS tot_papers
+MATCH (k)-[]-(p:Paper)-[]-(j)
+WITH j, count(DISTINCT p) / toFloat(tot_papers) AS papers_in_keyword, tot_papers
+WHERE papers_in_keyword >= 0.4
+RETURN j, papers_in_keyword, tot_papers ORDER BY tot_papers DESC
+
+
 --- Good Helper Queries
 
 CALL db.schema.visualization

@@ -31,13 +31,13 @@ relationship ids for each.
 
 ### D Recommender
 We are using keywords for a community:
-- Design
-- Product design
-- Computer aided design
-- Surveys
-- Humans
-- Friction stir welding
-- Machine design
+- design
+- product design
+- computer aided design
+- surveys
+- humans
+- friction stir welding
+- machine design
 
 
 ### Article Nodes
