@@ -1,9 +1,6 @@
 from utils import Neo4jConnection
 import time
 
-conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
-
-
 def delete_all_existing_nodes():
     print(f"Deleting all existing nodes and edges.")
     tic = time.perf_counter()
@@ -171,6 +168,7 @@ def create_keywords_from_index_nodes():
 ##################################
 
 if __name__ == '__main__':
+    conn = Neo4jConnection(uri="bolt://localhost:7687", user="neo4j", pwd="lab1ml")
     print(f"\n**** Starting neo4j database initialization ****\n")
     main_tic = time.perf_counter()
 
