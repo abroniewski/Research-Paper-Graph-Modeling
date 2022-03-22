@@ -33,3 +33,11 @@ TODO: Check why there are so many authors with missing affiliations after evolut
 
 
 --- Ismail Section
+TODO
+Next, we want to identify the top papers of these conferences/journals. We need to
+find the papers with the highest page rank provided the number of citations from the
+papers of the same community (papers in the conferences/journals of the database
+community). As a result we would obtain (highlight), say, the top-100 papers of the
+conferences of the database community.
+
+For this part we've just used citations that were made by the papers of the same community.
