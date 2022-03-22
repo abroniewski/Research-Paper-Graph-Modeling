@@ -98,15 +98,93 @@ CALL gds.graph.create(
 )
 
 
---- D Recommender
-- Define Research Community
+------------ D Recommender ------------
+
+--- --- Part 1 - Define Research Community
 MATCH (k:Keyword )
 WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
                     'machine design']
 SET k.community = 1
 RETURN k
 
-- Find Journals part of the community
+--- --- Part 2 - Find Journals part of the community
+MATCH (k:Keyword {community: 1})
+
+MATCH (j:Journal )<-[in_col:IN_COLLECTION]-()
+
+WITH j, k, count(in_col) AS tot_papers
+MATCH (k)-[]-(p:Paper)-[]-(j)
+WITH j AS journal, count(DISTINCT p) / toFloat(tot_papers) AS papers_in_keyword, tot_papers
+WHERE papers_in_keyword >= 0.9
+SET journal.community = 1
+RETURN journal, papers_in_keyword, tot_papers ORDER BY tot_papers DESC
+
+--- --- Part 3 - Find top papers with highest page rank
+- Page rank info:
+The PageRank algorithm measures the importance of each node within the graph, based on the number incoming relationships
+and the importance of the corresponding source nodes. We're running it on monopartite graph In our case the importance
+of a paper will be based on how many times it is cited by the same conference paper.
+
+// Set papers' community to the community of the Journals (1 in this case)
+MATCH (p:Paper)-->(j:Journal {community: 1})
+SET p.community = j.community
+RETURN p, j
+
+// Create Graph containing only community papers cited by same community papers
+CALL gds.graph.create.cypher(
+  'Paper',
+  'MATCH (p:Paper)-->(j:Journal {community: 1}) RETURN id(p) AS id',
+  'MATCH (p:Paper {community: 1})<-[c:CITED]-(p2:Paper {community: 1})
+  RETURN id(p) AS source, id(p2) AS target'
+)
+YIELD
+  graphName AS graph, nodeQuery, nodeCount AS nodes, relationshipQuery, relationshipCount AS rels
+
+// Check results -- temp
+CALL gds.pageRank.stream('Paper')
+YIELD nodeId, score
+RETURN gds.util.asNode(nodeId).name AS name, score
+ORDER BY score DESC, name ASC
+
+// Do page rank on the filtered papers
+CALL gds.pageRank.write('Paper', {
+    maxIterations: 20,
+    dampingFactor: 0.85,
+    writeProperty: 'pagerank'
+})
+YIELD nodePropertiesWritten, ranIterations
+
+// View top-5 papers
+MATCH (p:Paper {community: 1})
+RETURN p, p.pagerank ORDER BY p.pagerank DESC LIMIT 5
+
+--- --- Part 4 - authors
+//Authors of top-5 papers
+MATCH (a:Author)-[]->(p:Paper {community: 1})
+WITH collect(a) AS authors, p, p.pagerank AS pagerank ORDER BY pagerank DESC LIMIT 5
+UNWIND authors AS one_author
+SET one_author.can_review = 'community1'
+RETURN one_author, p, pagerank
+
+//Gurus of community-1 "design" who have 2 papers in top-5
+MATCH (a:Author)-[]->(p:Paper {community: 1})
+WITH collect(a) AS authors, p, p.pagerank AS pagerank ORDER BY pagerank DESC LIMIT 5
+UNWIND authors AS one_author
+WITH one_author, count(p) AS papers_of_auth
+WHERE papers_of_auth > 1
+SET one_author.guru = True
+RETURN one_author, papers_of_auth
+
+
+
+--- Good Helper Queries
+
+CALL db.schema.visualization
+This query allows you to see schema of the graph.
+
+------ Testing
+
+- Shows intermediate state for: Find Journals part of the community
 MATCH (k:Keyword )
 WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
                     'machine design']
@@ -116,24 +194,10 @@ WITH j, k, in_col
 MATCH (k)-[]-(p:Paper)-[]-(jj:Journal {title: "Journal of Mechanical Design, Transactions of the ASME"})
 RETURN jj, p, k, j, count(in_col) AS tot_papers
 
-# TODO Discuss with Adam (match on community = 1)
-MATCH (k:Keyword )
-WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
-                    'machine design']
+- Show papers that are cited by papers from community
+MATCH (j:Journal {community: 1})<--(p:Paper)<-[c:CITED]-(p2:Paper)-->(j2:Journal {community: 1})
+RETURN p, p2
 
-MATCH (j:Journal )<-[in_col:IN_COLLECTION]-()
-
-WITH j, k, count(in_col) AS tot_papers
-MATCH (k)-[]-(p:Paper)-[]-(j)
-WITH j, count(DISTINCT p) / toFloat(tot_papers) AS papers_in_keyword, tot_papers
-WHERE papers_in_keyword >= 0.4
-RETURN j, papers_in_keyword, tot_papers ORDER BY tot_papers DESC
-
-
---- Good Helper Queries
-
-CALL db.schema.visualization
-This query allows you to see schema of the graph.
 
 Data for testing CASE
 MERGE (a:Person {name: "Alice", age: 38, eyes: "brown"})
