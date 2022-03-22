@@ -27,6 +27,7 @@ Done: ADAM - Add author affiliation cypher query
 Done: ADAM - Add author affiliation in pre-process data
 TODO: Update Architecture design with current model
 TODO: Explore data using Algorithm
+TODO: ADAM - complete Algoirthm 2, page rank
 TODO: Complete Recommender work -> generate communities
 TODO: Check why there are so many authors with missing affiliations after evolution. Is it a trim() issue?
 
