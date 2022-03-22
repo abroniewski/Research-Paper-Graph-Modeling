@@ -62,6 +62,8 @@ RETURN a, papers, list_cited, h_index_list, h_index_list[-1][1] as h_index
 ref: https://iprapas.github.io/posts/neo4j-recommender/
 
 --- Queries for C Graph Algorithms
+
+-- You will need to install plugins
 -- Louvain ref: https://neo4j.com/docs/graph-data-science/1.8/algorithms/louvain/
 - Create in-memory graph and store it in the graph catalog
 CALL gds.graph.create('yoGraph',
@@ -85,6 +87,15 @@ CALL gds.louvain.write('yoGraph',
     writeProperty: 'community',
 })
 YIELD communityCount, modularity, modularities
+
+
+
+-- Query for C Graph Algorithm (ArticleRank)
+CALL gds.graph.create(
+  'PaperRank',
+  'Paper',
+  'CITED'
+)
 
 
 --- D Recommender
