@@ -53,6 +53,13 @@ def generate_publication_review_data():
     return df
 
 
+def create_review_group_unique_constraint():
+    query_create_review_group_unique_constraint = '''
+    CREATE CONSTRAINT ON (n:ReviewGroup) ASSERT n.group_id IS UNIQUE
+    '''
+    conn.query(query_create_review_group_unique_constraint, db='neo4j')
+
+
 def query_add_peer_review_group_details(df):
     print(f"Starting function to load peer review group details.")
     tic = time.perf_counter()
@@ -105,15 +112,12 @@ def query_add_author_affiliation(df):
     print(f"Total time for query was: {toc-tic:0.4f} seconds\n")
 
 
-def run_evolve_db(df):
-    query_add_peer_review_group_details(df)
-    query_add_author_affiliation(df)
-
-
 ##################################
 # Main Program Run
 ##################################
 
 if __name__ == '__main__':
     df = generate_publication_review_data()
-    run_evolve_db(df)
+    create_review_group_unique_constraint()
+    query_add_peer_review_group_details(df)
+    query_add_author_affiliation(df)

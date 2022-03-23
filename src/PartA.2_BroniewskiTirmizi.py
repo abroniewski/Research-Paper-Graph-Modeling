@@ -98,10 +98,7 @@ def create_cited_by_column(df):
     :param pd.DataFrame df:
     :return: pd.DataFrame
     """
-    # Way 1
-    # df["cited_by"] = [ choice(range(len(df))) for i in range(len(df)) ]
 
-    # Way 2 (more clear)
     list_of_cited_by = []
     for i in range(len(df)):
         # choice function randomly samples from the provided list
@@ -109,15 +106,13 @@ def create_cited_by_column(df):
         list_of_cited_by.append(choices(df["article_no"], k=choice(range(1, 10))))
 
     # this line of code adds the generated citations into the cited_by column
-    # TODO: Adam needs to learn what the map function does and how this line works
-    # Pulled from here on stack overflow:
-    # https://stackoverflow.com/questions/45306988/column-of-lists-convert-list-to-string-as-a-new-column
     df["cited_by"] = [','.join(map(str, l)) for l in list_of_cited_by]
     return df
 
 
 def extract_keyword_and_set_keyword_id(df):
     """
+    Deprecated function.
     This function extracts all the unique keywords from the dataset and gives them all a unique ID.
     :param pd.DataFrame df:
     :return: pd.DataFrame
@@ -142,7 +137,6 @@ def extract_keyword_and_set_keyword_id(df):
 
     df_kw = pd.DataFrame(unique_keywords_list, columns=["keyword"])
     df_kw = df_kw.reset_index()
-    # We want to rename the index column, but since that is difficult (cuz I no want to Google)
     # we are copying index col to create a new article_no col
     df_kw["keyword_id"] = df_kw["index"]
     df_kw = df_kw.drop("index", axis=1)
@@ -152,7 +146,9 @@ def extract_keyword_and_set_keyword_id(df):
 
 def maps_article_no_keyword_id(df, keywords_dict):
     """
-    Trying to separate out keyword list and create a connection file for a specific article to keyword_id
+    Deprecated function.
+    Trying to separate out keyword list and create a connection file for a specific article to
+    keyword_id
     e.g. Article_no -> Keyword_id
     :param pd.DataFrame df:
     :param dict keywords_dict:
@@ -188,14 +184,52 @@ def delete_all_existing_nodes():
     query_delete_all_existing_nodes = '''
         MATCH (n) DETACH DELETE n
     '''
+    query_drop_keyword_constraint = '''
+        DROP CONSTRAINT ON(n:Keyword) ASSERT n.keyword IS UNIQUE
+        '''
+    query_drop_author_constraint = '''
+        DROP CONSTRAINT ON (n:Author) ASSERT n.name IS UNIQUE
+        '''
+    query_drop_paper_unique_constraint = '''
+        DROP CONSTRAINT ON (n:Paper) ASSERT n.article_no IS UNIQUE
+        '''
+
     conn.query(query_delete_all_existing_nodes, db='neo4j')
+    conn.query(query_drop_keyword_constraint, db='neo4j')
+    conn.query(query_drop_author_constraint, db='neo4j')
+    conn.query(query_drop_paper_unique_constraint, db='neo4j')
+
     toc = time.perf_counter()
     print(f"Total time: {toc - tic:0.4f} seconds\n")
+
+
+def create_author_unique_contraint():
+    query_create_unique_author_constraint = '''
+    CREATE CONSTRAINT ON (n:Author) ASSERT n.name IS UNIQUE
+    '''
+    conn.query(query_create_unique_author_constraint, db='neo4j')
+
+
+def create_paper_unique_constraint():
+    # We will need to cycle through all of the papers for future queries. An index an paper will
+    # significantly improve performance of all these future queries.
+    query_create_unique_paper_constraint = '''
+    CREATE CONSTRAINT ON (n:Paper) ASSERT n.article_no IS UNIQUE
+    '''
+    conn.query(query_create_unique_paper_constraint, db='neo4j')
+
+
+def create_keyword_unique_constraint():
+    query_create_keyword_unique_constraint = '''
+    CREATE CONSTRAINT ON(n:Keyword) ASSERT n.keyword IS UNIQUE
+    '''
+    conn.query(query_create_keyword_unique_constraint, db='neo4j')
 
 
 def create_author_paper_collection_year():
     print(f"Creating authors, papers, collections and years.")
     tic = time.perf_counter()
+
     query_create_author_paper_collection_year = '''
     // CREATE NODES FOR AUTHORS AND PAPERS + EDGES FOR CONTRIBUTION
     // This works by using LOAD CSV to connect to the locally available .csv in the default /import folder of neo4j
@@ -256,14 +290,7 @@ def update_document_type_node_labels():
     # have, and REMOVE the previous label and temporary "document_type" property.
     print(f"Updating document type node labels.")
     tic = time.perf_counter()
-    query_set_document_type_index = '''
-    // We will need to cycle through all of the document_type nodes we created to pull the attribute 
-    // document_type out of the node and label the node with it. 
-    // We start by creating an INDEX on that property cycling through properties instead of taking 
-    // advantage of graph database ability to move through relationships is expensive.
 
-    CREATE INDEX ON :document_type(document_type)
-    '''
     query_update_proceeding_node_labels = '''
     MATCH (n:document_type {document_type:'Proceeding'})
     SET n:Proceeding
@@ -284,15 +311,10 @@ def update_document_type_node_labels():
     REMOVE n:document_type
     REMOVE n.document_type
     '''
-    query_drop_document_type_index = '''
-    // Removing index for no longer required document_type
-        DROP INDEX ON :document_type(document_type)
-    '''
-    conn.query(query_set_document_type_index, db='neo4j')
+
     conn.query(query_update_proceeding_node_labels, db='neo4j')
     conn.query(query_update_journal_node_labels, db='neo4j')
     conn.query(query_update_other_node_labels, db='neo4j')
-    conn.query(query_drop_document_type_index, db='neo4j')
     toc = time.perf_counter()
     print(f"Total time: {toc - tic:0.4f} seconds\n")
 
@@ -325,9 +347,10 @@ def create_citations_edges():
 
 def create_keywords_from_index_nodes():
     # TODO: This keyword long is expensive. Can it be made faster by using a keyword index and matching on the index
-    # instead of on the string?
+    #   instead of on the string?
     print(f"Creating keywords.")
     tic = time.perf_counter()
+
     query_create_keywords_from_index_nodes = '''
     // LEARNING: when matching on indexes, always add toInteger as CSV LOAD reads everything in as a string.
 
@@ -345,22 +368,22 @@ def create_keywords_from_index_nodes():
 
 
 def run_preprocess():
+    df = pd.read_csv(get_user_input_for_test_run())
+
     print(f"\n**** Starting data pre-processing ****\n")
     preprocess_tic = time.perf_counter()
-    df = pd.read_csv(get_user_input_for_test_run())
 
     df = rename_dataset_variables(df)
     df = create_review_group(df)
     df = set_index_as_article_number(df)
     df = create_cited_by_column(df)
 
-    df_kw = extract_keyword_and_set_keyword_id(df)
-    df_kw.to_csv(join(PROCESSED_DIR, "keywords.csv"), index=False)
-
-    # we load that info in a dictionary
-    keywords_dict = dict(zip(df_kw.keyword, df_kw.keyword_id))
-
+    # Deprecated. Keyword extraction occurs directly in Cypher.
+    # df_kw = extract_keyword_and_set_keyword_id(df)
+    # df_kw.to_csv(join(PROCESSED_DIR, "keywords.csv"), index=False)
+    # keywords_dict = dict(zip(df_kw.keyword, df_kw.keyword_id))
     # df = maps_article_no_keyword_id(df, keywords_dict)
+
     df.to_csv(join(PROCESSED_DIR, "publications_processed.csv"), index=False)
     df.to_csv(join(PROJECT_IMPORT_PATH, "publications_processed.csv"), index=False)
     preprocess_toc = time.perf_counter()
@@ -373,6 +396,9 @@ def run_db_initialize():
     main_tic = time.perf_counter()
 
     delete_all_existing_nodes()
+    create_author_unique_contraint()
+    create_paper_unique_constraint()
+    create_keyword_unique_constraint()
     create_author_paper_collection_year()
     add_peer_review_group_authors()
     update_document_type_node_labels()
