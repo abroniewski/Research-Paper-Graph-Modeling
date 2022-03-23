@@ -61,7 +61,7 @@ WITH  a,papers, list_cited, [x IN range(1,size(list_cited)) where x<=list_cited[
 RETURN a, papers, list_cited, h_index_list, h_index_list[-1][1] as h_index
 ref: https://iprapas.github.io/posts/neo4j-recommender/
 
---- Queries for C Graph Algorithms
+--- Queries for C Graph Algorithms (Louvain)
 
 -- You will need to install plugins
 -- Louvain ref: https://neo4j.com/docs/graph-data-science/1.8/algorithms/louvain/
@@ -197,6 +197,19 @@ RETURN jj, p, k, j, count(in_col) AS tot_papers
 - Show papers that are cited by papers from community
 MATCH (j:Journal {community: 1})<--(p:Paper)<-[c:CITED]-(p2:Paper)-->(j2:Journal {community: 1})
 RETURN p, p2
+
+MATCH (k:Keyword )
+WHERE k.keyword IN ['design', 'product design', 'computer aided design', 'surveys', 'humans', 'friction stir welding',
+                    'machine design']
+
+MATCH (j:Journal )<-[in_col:IN_COLLECTION]-()
+
+WITH j, k, count(in_col) AS tot_papers
+MATCH (k)-[]-(p:Paper)-[]-(j)
+WITH j, count(DISTINCT p) / toFloat(tot_papers) AS papers_in_keyword, tot_papers
+WHERE papers_in_keyword >= 0.4
+RETURN j, papers_in_keyword, tot_papers ORDER BY tot_papers DESC
+
 
 
 Data for testing CASE
