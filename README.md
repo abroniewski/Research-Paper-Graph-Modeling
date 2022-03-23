@@ -19,3 +19,7 @@ LIMIT 3;
 
 ## Data Pre-processing
 Some pre-processing steps took place without scripting and were completed manually via regex commands. Documentation of the steps can be found [here](docs/PRE-PROCESS-STEPS.md).
+
+### Links
+Another project from previous years.
+https://iprapas.github.io/posts/neo4j-recommender/
