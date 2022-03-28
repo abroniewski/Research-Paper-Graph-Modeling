@@ -59,7 +59,8 @@ DIR_PATH = /Users/adambroniewski/Library/Application Support/Neo4j Desktop/Appli
 3) Start running a local neo4j database instance.
 4) Run `PartA.2_BroniewskiTirmizi.py` - This will complete all data pre-processing from raw data and initialize the database. You can monitor query performance in your terminal
 5) Run `PartA.3_BroniewskiTirmizi.py` - This will update the database with additional information.
-**_Note:_** **The method used for updating the graph database is a great example of how it should _not_ be done! See the section below, [Evolving the Graph](#evolving-the-graph), the learn more.
+
+**_Note:_** *The method used for updating the graph database is a great example of how it should **_not_** be done! See the section below, [Evolving the Graph](#evolving-the-graph), to learn more.*
 
 ## Data Source
 Data being used is the BYU Engineering Publications in Scopus 2017-2021. The dataset is available 
