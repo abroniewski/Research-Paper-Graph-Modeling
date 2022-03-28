@@ -50,7 +50,16 @@ You would require the following tools to develop and run the project:
 
 ### Installation
 
-...
+1) Create a file named `local.confg` and store it in the /src location of your local repository.
+2) Insert the following snippet of code, replacing `DIR_PATH` with the directory to your local neo4j project import folder.
+```
+[PROJECT_DIR]
+DIR_PATH = /Users/adambroniewski/Library/Application Support/Neo4j Desktop/Application/relate-data/dbmss/dbms-d2865cee-b5fb-4536-bdc8-964b408bb3f8/import
+```
+3) Start running a local neo4j database instance.
+4) Run `PartA.2_BroniewskiTirmizi.py` - This will complete all data pre-processing from raw data and initialize the database. You can monitor query performance in your terminal
+5) Run `PartA.3_BroniewskiTirmizi.py` - This will update the database with additional information.
+**_Note:_** **The method used for updating the graph database is a great example of how it should _not_ be done! See the section below, [Evolving the Graph](#evolving-the-graph), the learn more.
 
 ## Data Source
 Data being used is the BYU Engineering Publications in Scopus 2017-2021. The dataset is available 
