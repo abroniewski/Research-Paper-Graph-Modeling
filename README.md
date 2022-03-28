@@ -69,6 +69,8 @@ Data being used is the BYU Engineering Publications in Scopus 2017-2021. The dat
 
 ### Architecture Modeling
 
+![GraphDB architecture. Metadata shown in green with data instances shown in blue. Note: Properties included in data evolution (A.3) are also included in this figure.](docs/Graph-Architecture-Model.png)
+
 This architecture for the graph database was chosen to ensure queries being completed take advantage of the graph database linked lists file storage properties. All category information that is needed to match, filter, or aggregate for anticipated queries is placed in the node and edge labels. Repeating information like the year of publication or when a proceeding took place was also stored outside of individual nodes to improve database consistency. This way, errors can be more easily found by visualizing all existing nodes or relationships of a given category.
 
 Queries performance is optimized with the year and journal/proceeding as a node as it quickly eliminates nodes that are not relevant to a query, which improves overall performance. For this type of database, we are looking to optimize on these types of groupings (year, collection type, etc.).
